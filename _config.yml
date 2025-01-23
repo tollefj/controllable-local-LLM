@@ -1,0 +1,65 @@
+# Jupyter Book Configuration File
+# Documentation: https://jupyterbook.org/en/stable/reference/_config.yml/index.html
+
+# General book settings
+title: "Hosting Guide for Large Language Models (LLMs)"
+author: "Your Name or Organization"
+logo: "path/to/logo.png" # Optional: Path to a logo
+favicon: "path/to/favicon.ico" # Optional: Path to a favicon
+language: "en" # Language code for the book
+
+# Book structure
+root: intro # The root markdown or notebook file for the book (e.g., intro.md)
+chapters:
+  - file: intro
+  - file: setup_environment
+  - file: deploying_llm
+  - file: fine_tuning
+  - file: optimization
+  - file: monitoring_and_scaling
+  - file: faq
+
+# Jupyter Book features
+launch_buttons:
+  notebook_interface: "jupyterlab" # Interface for launching notebooks
+  colab_url: "https://colab.research.google.com/"
+  binderhub_url: "https://mybinder.org/" # Replace with your BinderHub if customized
+
+execute:
+  execute_notebooks: "force" # Options: auto, force, cache
+  timeout: 120 # Execution timeout for notebooks in seconds
+
+sphinx:
+  extra_extensions:
+    - sphinx.ext.autodoc # For automatically including docstrings
+    - sphinx.ext.mathjax # For LaTeX-style math rendering
+    - sphinx.ext.viewcode # For including source code
+
+# Theme settings
+theme:
+  name: "sphinx_book_theme"
+  options:
+    repository_url: "https://github.com/your-repo-name" # URL to your GitHub repo
+    repository_branch: "main"
+    path_to_docs: "docs/"
+    launch_buttons: true
+    use_fullscreen_button: true
+
+# External resources
+extra_css:
+  - "custom.css" # Path to custom CSS for styling
+extra_js:
+  - "custom.js" # Path to custom JavaScript
+
+# Citation and references
+bibtex_bibfiles:
+  - references.bib # BibTeX file for citations
+  - llm_resources.bib
+
+# Configuration for any extra custom plugins or scripts
+plugins:
+  myst_nb:
+    enable_eval_rst: true
+  jupyterlite: # Enable JupyterLite for interactive notebook previews
+    server_extensions:
+      - jupyterlite-xeus-python
