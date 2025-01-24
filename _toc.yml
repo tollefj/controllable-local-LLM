@@ -1,0 +1,7 @@
+format: jb-book
+root: content/landing
+
+chapters:
+  - file: content/setup
+  - file: content/api
+  - file: content/models
