@@ -16,12 +16,11 @@ What we want:
 2. A system for handling and orchestrating responses
 3. Something useful you can use in your master's thesis, perhaps!
 
-```{image} ../assets/local-alpaca.png
-:alt: local-alpaca
+```{image} ../assets/local-llama.png
+:alt: local-llama
 :class: bg-primary mb-1
 :align: center
 :width: 400px
-:caption: "Local-llama"
 ```
 
 <!-- caption -->
