@@ -1,0 +1,44 @@
+from typing import List, Optional
+
+from ollama import ChatResponse, chat
+from pydantic.types import JsonSchemaValue
+
+
+def generate(
+    system_prompt: str,
+    prompt: str,
+    model: str,
+    schema: Optional[JsonSchemaValue] = None,
+    parse: bool = True,
+    num_ctx: int = 48000,
+    num_predict: int = 2000,
+    temperature: float = 0.0,
+) -> str:
+    response: ChatResponse = chat(
+        model=model,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": prompt},
+        ],
+        options={
+            "num_ctx": num_ctx,
+            "num_predict": num_predict,
+            "top_k": 50,
+            "top_p": 0.95,
+            "temperature": temperature,
+            "seed": 0,  # this is not needed when temp is 0
+            "repeat_penalty": 1.0,  # remain default for json outputs, from experience.
+        },
+        format=schema,
+        stream=False,
+    )
+    res = response.message.content
+    if parse and schema:
+        return eval(res)
+    return res
+
+
+if __name__ == "__main__":
+    # prompt = "give me 5 interesting facts about the universe"
+    prompt = "Give me a simple recipe for a delicious citrusy cake. Make sure units are in grams when it makes sense. Temperatures should be in C."
+    print(generate(prompt))

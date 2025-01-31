@@ -3,8 +3,13 @@
 1. Download [ollama](https://ollama.com/download) for easy serving of models. It supports most operating systems.
 2. Follow the instructions and install `ollama`. **Do not download any models yet.**
    - `ollama` enables a CLI for running models (soon!).
-3. If the application doesn't start up properly, type `ollama serve` in your terminal.
-   - If it's already running, you will see an error message like `Error: listen tcp 127.0.0.1:11434: bind: address already in use`.
+3. If the application starts automatically, close it, and open your terminal:
+
+```bash
+OLLAMA_MAX_LOADED_MODELS=1 OLLAMA_NUM_PARALLEL=1 ollama serve
+```
+
+This opens a server on `http://localhost:11434`, that you can easily close, and we specify that we don't want to load more models if requested. This is to conform to the limits of our hardware. In reality, you would assign a single LLM instance for each "agent" -- a program that handles a specific task.
 
 For local hosting, we usually prefer to run _quantized_ GGUF models, named after the developer of the format, Georgi Gerganov.
 
@@ -19,7 +24,7 @@ For local hosting, we usually prefer to run _quantized_ GGUF models, named after
   - For example, from FP16 (half-precision) to a ~5 bit representation, commonly denoted by the "Q5" suffix.
     - Libraries like PyTorch train with FP32, but we've moved towards mixed-precision which combines FP32 and FP16:
       - FP16: weights/activations
-      - FP32: gradients during backpropagation for numerical stability.
+      - FP32: gradients during backpropagation for numerical stability (lower precision -> less information)
 - This can reduce a 70B model (140GB) to 20-30GB while still being fairly usable.
 
 ```{image} ../assets/gguf-bytes.png

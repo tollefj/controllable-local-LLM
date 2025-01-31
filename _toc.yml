@@ -1,7 +1,7 @@
 format: jb-book
-root: content/landing
+root: content/01-landing
 
 chapters:
-  - file: content/setup
-  - file: content/api
-  - file: content/models
+  - file: content/02-setup
+  - file: content/03-api
+  - file: content/04-models
