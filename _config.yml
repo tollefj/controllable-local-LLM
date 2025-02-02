@@ -13,20 +13,20 @@ repository:
 html:
   use_repository_button: true
 
-root: landing
+root: 01-landing
 chapters:
-  - file: setup
-  - file: api
-  - file: models
+  - file: 02-setup
+  - file: 03-api
+  - file: 04-models
 
 # launch_buttons:
 #   notebook_interface: "jupyterlab" # Interface for launching notebooks
 # colab_url: "https://colab.research.google.com/"
 # binderhub_url: "https://mybinder.org/" # Replace with your BinderHub if customized
 
-# execute:
-#   execute_notebooks: "auto" # Options: auto, force, cache
-#   timeout: 120 # Execution timeout for notebooks in seconds
+execute:
+  execute_notebooks: "auto" # Options: auto, force, cache
+  timeout: 120 # Execution timeout for notebooks in seconds
 
 # theme:
 #   options:

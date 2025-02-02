@@ -1,0 +1,6 @@
+ollama
+markitdown
+selenium
+beautifulsoup4
+webdriver-manager
+
