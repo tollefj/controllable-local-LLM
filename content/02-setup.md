@@ -57,13 +57,17 @@ Let's begin with `llama-3.2 1B` - a small 1B model just to test out our system.
 :align: center
 ```
 
-Run the following command to use the model:
+Run the following command to use the model (this is the 6-bit version, it's only 1.1GB!)
 
 ```bash
 ollama run hf.co/bartowski/Llama-3.2-1B-Instruct-GGUF:Q6_K_L
 ```
 
-This is the 6-bit version of the highest quality. It's only 1.1GB, so let's start with that.
+If you have a little more capable hardware, we can use the 3B version:
+
+```bash
+ollama run hf.co/unsloth/Llama-3.2-3B-Instruct-GGUF:Q6_K
+```
 
 The output of the run command:
 
@@ -74,3 +78,11 @@ The output of the run command:
 ```
 
 However, we're not interested in talking to it through the terminal; we want to process outputs in our code, i.e., we need an API!
+
+___
+
+PS: If we want to use a far more capable model, the new Mistral Small (24B), released last week, is great! This one requires ~16GB VRAM, and a little more for context.
+
+```bash
+ollama run hf.co/bartowski/Mistral-Small-24B-Instruct-2501-GGUF:Q4_K_M
+```

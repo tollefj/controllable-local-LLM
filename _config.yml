@@ -24,8 +24,13 @@ chapters:
 # colab_url: "https://colab.research.google.com/"
 # binderhub_url: "https://mybinder.org/" # Replace with your BinderHub if customized
 
+exclude_patterns:
+  - "**/.ipynb_checkpoints"
+  - "**/.DS_Store"
+  - "**/src"
+
 execute:
-  execute_notebooks: "auto" # Options: auto, force, cache
+  execute_notebooks: "cache" # Options: auto, force, cache
   timeout: 120 # Execution timeout for notebooks in seconds
 
 # theme:

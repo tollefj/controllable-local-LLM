@@ -1,0 +1,2107 @@
+<html lang="en"><head><script>;window.NREUM||(NREUM={});NREUM.init={distributed_tracing:{enabled:true},privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]}};
+			
+			;NREUM.loader_config={accountID:"438030",trustKey:"438030",agentID:"772317078",licenseKey:"97f8f67f26",applicationID:"772317077"};
+			;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"97f8f67f26",applicationID:"772317077",sa:1};
+			;/*! For license information please see nr-loader-spa-1.242.0.min.js.LICENSE.txt */
+			(()=>{"use strict";var e,t,r={234:(e,t,r)=>{r.d(t,{P_:()=>g,Mt:()=>v,C5:()=>s,DL:()=>w,OP:()=>S,lF:()=>N,Yu:()=>x,Dg:()=>m,CX:()=>c,GE:()=>A,sU:()=>j});var n=r(8632),i=r(9567);const o={beacon:n.ce.beacon,errorBeacon:n.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o),(0,n.Qy)(e,a[e],"info")}const u=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var d=r(7056),l=r(50);const f=()=>{const e={mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{proxy:{assets:void 0,beacon:void 0},privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,block_internal:!0,enabled:!0,harvestTimeSeconds:10,autoStart:!0},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:d.oD,inactiveMs:d.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},metrics:{enabled:!0,autoStart:!0},page_action:{enabled:!0,harvestTimeSeconds:30,autoStart:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1,autoStart:!0},session_trace:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},harvest:{tooManyRequestsDelay:60},session_replay:{autoStart:!0,enabled:!1,harvestTimeSeconds:60,sampling_rate:50,error_sampling_rate:50,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){u(t)?e.mask_selector=t+",[data-nr-mask]":null===t?e.mask_selector=t:(0,l.Z)("An invalid session_replay.mask_selector was provided and will not be used",t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){u(t)?e.block_selector+=",".concat(t):""!==t&&(0,l.Z)("An invalid session_replay.block_selector was provided and will not be used",t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,l.Z)("An invalid session_replay.mask_input_option was provided and will not be used",t)}},spa:{enabled:!0,harvestTimeSeconds:10,autoStart:!0}}},h={},p="All configuration objects require an agent identifier!";function g(e){if(!e)throw new Error(p);if(!h[e])throw new Error("Configuration for ".concat(e," was never set"));return h[e]}function m(e,t){if(!e)throw new Error(p);h[e]=(0,i.D)(t,f()),(0,n.Qy)(e,h[e],"config")}function v(e,t){if(!e)throw new Error(p);var r=g(e);if(r){for(var n=t.split("."),i=0;i<n.length-1;i++)if("object"!=typeof(r=r[n[i]]))return;r=r[n[n.length-1]]}return r}const b={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},y={};function w(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!y[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return y[e]}function A(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");y[e]=(0,i.D)(t,b),(0,n.Qy)(e,y[e],"loader_config")}const x=(0,n.mF)().o;var E=r(385),_=r(6818);const T={buildEnv:_.Re,customTransaction:void 0,disabled:!1,distMethod:_.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(E._A?.performance?.timeOrigin||E._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+E._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof E._A.XMLHttpRequest?.prototype?.addEventListener,version:_.q4,denyList:void 0},D={};function S(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function j(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,T),(0,n.Qy)(e,D[e],"runtime")}function N(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},9567:(e,t,r)=>{r.d(t,{D:()=>i});var n=r(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,n.Z)("Setting a Configurable requires a model to set its initial properties");const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(r).length?e:r;for(let a in o)if(void 0!==e[a])try{"object"==typeof e[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){(0,n.Z)("An error occurred while setting a property of a Configurable",e)}return r}catch(e){(0,n.Z)("An error occured while setting a Configurable",e)}}},6818:(e,t,r)=>{r.d(t,{Re:()=>i,gF:()=>o,q4:()=>n});const n="1.242.0",i="PROD",o="CDN"},385:(e,t,r)=>{r.d(t,{FN:()=>s,IF:()=>d,Nk:()=>f,Tt:()=>c,_A:()=>o,cv:()=>h,iS:()=>a,il:()=>n,ux:()=>u,v6:()=>i,w1:()=>l});const n="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=n?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=Boolean("hidden"===o?.document?.visibilityState),s=""+o?.location,c=/iPad|iPhone|iPod/.test(o.navigator?.userAgent),u=c&&"undefined"==typeof SharedWorker,d=(()=>{const e=o.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),l=Boolean(n&&window.document.documentMode),f=!!o.navigator?.sendBeacon,h=Math.floor(o?.performance?.timeOrigin||o?.performance?.timing?.navigationStart||Date.now())},1117:(e,t,r)=>{r.d(t,{w:()=>o});var n=r(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,n.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,r]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=r)}))}catch(e){(0,n.Z)("An error occured while setting SharedContext",e)}}}},8e3:(e,t,r)=>{r.d(t,{L:()=>d,R:()=>c});var n=r(8325),i=r(1284),o=r(4322),a=r(3325);const s={};function c(e,t){const r={staged:!1,priority:a.p[t]||0};u(e),s[e].get(t)||s[e].set(t,r)}function u(e){e&&(s[e]||(s[e]=new Map))}function d(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(u(e),!e||!s[e].get(t))return a(t);s[e].get(t).staged=!0;const r=[...s[e]];function a(t){const r=e?n.ee.get(e):n.ee,a=o.X.handlers;if(r.backlog&&a){var s=r.backlog[t],c=a[t];if(c){for(var u=0;s&&u<s.length;++u)l(s[u],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,r){r[0].on(e,r[1])}))}))}delete a[t],r.backlog[t]=null,r.emit("drain-"+t,[])}}r.every((e=>{let[t,r]=e;return r.staged}))&&(r.sort(((e,t)=>e[1].priority-t[1].priority)),r.forEach((t=>{let[r]=t;s[e].delete(r),a(r)})))}function l(e,t){var r=e[1];(0,i.D)(t[r],(function(t,r){var n=e[0];if(r[0]===n){var i=r[1],o=e[3],a=e[2];i.apply(o,a)}}))}},8325:(e,t,r)=>{r.d(t,{A:()=>c,ee:()=>u});var n=r(8632),i=r(2210),o=r(234);class a{constructor(e){this.contextId=e}}var s=r(3117);const c="nr@context:".concat(s.a),u=function e(t,r){var n={},s={},d={},f=!1;try{f=16===r.length&&(0,o.OP)(r).isolatedBacklog}catch(e){}var h={on:g,addEventListener:g,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,o){!1!==o&&(o=!0);if(u.aborted&&!i)return;t&&o&&t.emit(e,r,n);for(var a=p(n),c=m(e),d=c.length,l=0;l<d;l++)c[l].apply(a,r);var f=b()[s[e]];f&&f.push([h,e,r,a]);return a},get:v,listeners:m,context:p,buffer:function(e,t){const r=b();if(t=t||"feature",h.aborted)return;Object.entries(e||{}).forEach((e=>{let[n,i]=e;s[i]=t,t in r||(r[t]=[])}))},abort:l,aborted:!1,isBuffering:function(e){return!!b()[s[e]]},debugId:r,backlog:f?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return h;function p(e){return e&&e instanceof a?e:e?(0,i.X)(e,c,(()=>new a(c))):new a(c)}function g(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function v(t){return d[t]=d[t]||e(h,t)}function b(){return h.backlog}}(void 0,"globalEE"),d=(0,n.fP)();function l(){u.aborted=!0,u.backlog={}}d.ee||(d.ee=u)},5546:(e,t,r)=>{r.d(t,{E:()=>n,p:()=>i});var n=r(8325).ee.get("handle");function i(e,t,r,i,o){o?(o.buffer([e],i),o.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},4322:(e,t,r)=>{r.d(t,{X:()=>o});var n=r(5546);o.on=a;var i=o.handlers={};function o(e,t,r,o){a(o||n.E,i,e,t,r)}function a(e,t,r,i,o){o||(o="feature"),e||(e=n.E);var a=t[o]=t[o]||{};(a[r]=a[r]||[]).push([e,i])}},3239:(e,t,r)=>{r.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var n=r(385);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};n._A.addEventListener("test",null,e),n._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2],n=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(r,n))}function c(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2],n=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(r,n))}},3117:(e,t,r)=>{r.d(t,{a:()=>n});const n=(0,r(4402).Rl)()},4402:(e,t,r)=>{r.d(t,{Ht:()=>u,M:()=>c,Rl:()=>a,ky:()=>s});var n=r(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n._A?.crypto||n._A?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?o(t,++r).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=n._A?.crypto||n._A?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(31)));const a=[];for(var s=0;s<e;s++)a.push(o(r,++i).toString(16));return a.join("")}function c(){return s(16)}function u(){return s(32)}},7056:(e,t,r)=>{r.d(t,{Bq:()=>n,Hb:()=>o,oD:()=>i});const n="NRBA",i=144e5,o=18e5},7894:(e,t,r)=>{function n(){return Math.round(performance.now())}r.d(t,{z:()=>n})},7243:(e,t,r)=>{r.d(t,{e:()=>o});var n=r(385),i={};function o(e){if(e in i)return i[e];if(0===(e||"").indexOf("data:"))return{protocol:"data"};let t;var r=n._A?.location,o={};if(n.il)t=document.createElement("a"),t.href=e;else try{t=new URL(e,r.href)}catch(e){return o}o.port=t.port;var a=t.href.split("://");!o.port&&a[1]&&(o.port=a[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===a[0]?"443":"80"),o.hostname=t.hostname||r.hostname,o.pathname=t.pathname,o.protocol=a[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var s=!t.protocol||":"===t.protocol||t.protocol===r.protocol,c=t.hostname===r.hostname&&t.port===r.port;return o.sameOrigin=s&&(!t.hostname||c),"/"===o.pathname&&(i[e]=o),o}},50:(e,t,r)=>{function n(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}r.d(t,{Z:()=>n})},2587:(e,t,r)=>{r.d(t,{N:()=>c,T:()=>u});var n=r(8325),i=r(5546),o=r(3325);const a={stn:[o.D.sessionTrace],err:[o.D.jserrors,o.D.metrics],ins:[o.D.pageAction],spa:[o.D.spa],sr:[o.D.sessionReplay,o.D.sessionTrace]},s=new Set;function c(e,t){const r=n.ee.get(t);e&&"object"==typeof e&&(s.has(t)||Object.entries(e).forEach((e=>{let[t,n]=e;a[t]?a[t].forEach((e=>{n?(0,i.p)("feat-"+t,[],void 0,e,r):(0,i.p)("block-"+t,[],void 0,e,r),(0,i.p)("rumresp-"+t,[Boolean(n)],void 0,e,r)})):n&&(0,i.p)("feat-"+t,[],void 0,void 0,r),u[t]=Boolean(n)})),Object.keys(a).forEach((e=>{void 0===u[e]&&(a[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,r))),u[e]=!1)})),s.add(t))}const u={}},2210:(e,t,r)=>{r.d(t,{X:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},1284:(e,t,r)=>{r.d(t,{D:()=>n});const n=(e,t)=>Object.entries(e||{}).map((e=>{let[r,n]=e;return t(r,n)}))},4351:(e,t,r)=>{r.d(t,{P:()=>o});var n=r(8325);const i=()=>{const e=new WeakSet;return(t,r)=>{if("object"==typeof r&&null!==r){if(e.has(r))return;e.add(r)}return r}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{n.ee.emit("internal-error",[e])}catch(e){}}}},3960:(e,t,r)=>{r.d(t,{K:()=>a,b:()=>o});var n=r(3239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,n.bP)("load",e,t)}function a(e){if(i())return e();(0,n.iz)("DOMContentLoaded",e)}},8632:(e,t,r)=>{r.d(t,{EZ:()=>u,Qy:()=>c,ce:()=>o,fP:()=>a,gG:()=>d,mF:()=>s});var n=r(7894),i=r(385);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,r){let i=a();const o=i.initializedAgents||{},s=o[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,n.z)(),date:new Date}),i.initializedAgents={...o,[e]:{...s,[r]:t}},i}function u(e,t){a()[e]=t}function d(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},7956:(e,t,r)=>{r.d(t,{N:()=>i});var n=r(3239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],r=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;(0,n.iz)("visibilitychange",(function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)}),r,i)}},1214:(e,t,r)=>{r.d(t,{em:()=>b,u5:()=>S,QU:()=>C,_L:()=>I,Gm:()=>H,Lg:()=>L,BV:()=>G,Kf:()=>K});var n=r(8325),i=r(3117);const o="nr@original:".concat(i.a);var a=Object.prototype.hasOwnProperty,s=!1;function c(e,t){return e||(e=n.ee),r.inPlace=function(e,t,n,i,o){n||(n="");const a="-"===n.charAt(0);for(let s=0;s<t.length;s++){const c=t[s],u=e[c];d(u)||(e[c]=r(u,a?c+n:n,i,c,o))}},r.flag=o,r;function r(t,r,n,s,c){return d(t)?t:(r||(r=""),nrWrapper[o]=t,function(e,t,r){if(Object.defineProperty&&Object.keys)try{return Object.keys(e).forEach((function(r){Object.defineProperty(t,r,{get:function(){return e[r]},set:function(t){return e[r]=t,t}})})),t}catch(e){u([e],r)}for(var n in e)a.call(e,n)&&(t[n]=e[n])}(t,nrWrapper,e),nrWrapper);function nrWrapper(){var o,a,d,l;try{a=this,o=[...arguments],d="function"==typeof n?n(o,a):n||{}}catch(t){u([t,"",[o,a,s],d],e)}i(r+"start",[o,a,s],d,c);try{return l=t.apply(a,o)}catch(e){throw i(r+"err",[o,a,e],d,c),e}finally{i(r+"end",[o,a,l],d,c)}}}function i(r,n,i,o){if(!s||t){var a=s;s=!0;try{e.emit(r,n,i,t,o)}catch(t){u([t,r,n,i],e)}s=a}}}function u(e,t){t||(t=n.ee);try{t.emit("internal-error",e)}catch(e){}}function d(e){return!(e&&e instanceof Function&&e.apply&&!e[o])}var l=r(2210),f=r(385);const h={},p=f._A.XMLHttpRequest,g="addEventListener",m="removeEventListener",v="nr@wrapped:".concat(n.A);function b(e){var t=function(e){return(e||n.ee).get("events")}(e);if(h[t.debugId]++)return t;h[t.debugId]=1;var r=c(t,!0);function i(e){r.inPlace(e,[g,m],"-",o)}function o(e,t){return e[1]}return"getPrototypeOf"in Object&&(f.il&&y(document,i),y(f._A,i),y(p.prototype,i)),t.on(g+"-start",(function(e,t){var n=e[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var i=(0,l.X)(n,v,(function(){var e={object:function(){if("function"!=typeof n.handleEvent)return;return n.handleEvent.apply(n,arguments)},function:n}[typeof n];return e?r(e,"fn-",null,e.name||"anonymous"):n}));this.wrapped=e[1]=i}})),t.on(m+"-start",(function(e){e[1]=this.wrapped||e[1]})),t}function y(e,t){let r=e;for(;"object"==typeof r&&!Object.prototype.hasOwnProperty.call(r,g);)r=Object.getPrototypeOf(r);for(var n=arguments.length,i=new Array(n>2?n-2:0),o=2;o<n;o++)i[o-2]=arguments[o];r&&t(r,...i)}var w="fetch-",A=w+"body-",x=["arrayBuffer","blob","json","text","formData"],E=f._A.Request,_=f._A.Response,T="prototype";const D={};function S(e){const t=function(e){return(e||n.ee).get("fetch")}(e);if(!(E&&_&&f._A.fetch))return t;if(D[t.debugId]++)return t;function r(e,r,i){var o=e[r];"function"==typeof o&&(e[r]=function(){var e,r=[...arguments],a={};t.emit(i+"before-start",[r],a),a[n.A]&&a[n.A].dt&&(e=a[n.A].dt);var s=o.apply(this,r);return t.emit(i+"start",[r,e],s),s.then((function(e){return t.emit(i+"end",[null,e],s),e}),(function(e){throw t.emit(i+"end",[e],s),e}))})}return D[t.debugId]=1,x.forEach((e=>{r(E[T],e,A),r(_[T],e,A)})),r(f._A,"fetch",w),t.on(w+"end",(function(e,r){var n=this;if(r){var i=r.headers.get("content-length");null!==i&&(n.rxSize=i),t.emit(w+"done",[null,r],n)}else t.emit(w+"done",[e],n)})),t}const j={},N=["pushState","replaceState"];function C(e){const t=function(e){return(e||n.ee).get("history")}(e);return!f.il||j[t.debugId]++||(j[t.debugId]=1,c(t).inPlace(window.history,N,"-")),t}var O=r(3239);const P={},R=["appendChild","insertBefore","replaceChild"];function I(e){const t=function(e){return(e||n.ee).get("jsonp")}(e);if(!f.il||P[t.debugId])return t;P[t.debugId]=!0;var r=c(t),i=/[?&](?:callback|cb)=([^&#]+)/,o=/(.*)\.([^.]+)/,a=/^(\w+)(\.|$)(.*)$/;function s(e,t){if(!e)return t;const r=e.match(a),n=r[1];return s(r[3],t[n])}return r.inPlace(Node.prototype,R,"dom-"),t.on("dom-start",(function(e){!function(e){if(!e||"string"!=typeof e.nodeName||"script"!==e.nodeName.toLowerCase())return;if("function"!=typeof e.addEventListener)return;var n=(a=e.src,c=a.match(i),c?c[1]:null);var a,c;if(!n)return;var u=function(e){var t=e.match(o);if(t&&t.length>=3)return{key:t[2],parent:s(t[1],window)};return{key:e,parent:window}}(n);if("function"!=typeof u.parent[u.key])return;var d={};function l(){t.emit("jsonp-end",[],d),e.removeEventListener("load",l,(0,O.m$)(!1)),e.removeEventListener("error",f,(0,O.m$)(!1))}function f(){t.emit("jsonp-error",[],d),t.emit("jsonp-end",[],d),e.removeEventListener("load",l,(0,O.m$)(!1)),e.removeEventListener("error",f,(0,O.m$)(!1))}r.inPlace(u.parent,[u.key],"cb-",d),e.addEventListener("load",l,(0,O.m$)(!1)),e.addEventListener("error",f,(0,O.m$)(!1)),t.emit("new-jsonp",[e.src],d)}(e[0])})),t}const k={};function H(e){const t=function(e){return(e||n.ee).get("mutation")}(e);if(!f.il||k[t.debugId])return t;k[t.debugId]=!0;var r=c(t),i=f._A.MutationObserver;return i&&(window.MutationObserver=function(e){return this instanceof i?new i(r(e,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype),t}const z={};function L(e){const t=function(e){return(e||n.ee).get("promise")}(e);if(z[t.debugId])return t;z[t.debugId]=!0;var r=t.context,i=c(t),a=f._A.Promise;return a&&function(){function e(r){var n=t.context(),o=i(r,"executor-",n,null,!1);const s=Reflect.construct(a,[o],e);return t.context(s).getCtx=function(){return n},s}f._A.Promise=e,Object.defineProperty(e,"name",{value:"Promise"}),e.toString=function(){return a.toString()},Object.setPrototypeOf(e,a),["all","race"].forEach((function(r){const n=a[r];e[r]=function(e){let i=!1;[...e||[]].forEach((e=>{this.resolve(e).then(a("all"===r),a(!1))}));const o=n.apply(this,arguments);return o;function a(e){return function(){t.emit("propagate",[null,!i],o,!1,!1),i=i||!e}}}})),["resolve","reject"].forEach((function(r){const n=a[r];e[r]=function(e){const r=n.apply(this,arguments);return e!==r&&t.emit("propagate",[e,!0],r,!1,!1),r}})),e.prototype=a.prototype;const n=a.prototype.then;a.prototype.then=function(){var e=this,o=r(e);o.promise=e;for(var a=arguments.length,s=new Array(a),c=0;c<a;c++)s[c]=arguments[c];s[0]=i(s[0],"cb-",o,null,!1),s[1]=i(s[1],"cb-",o,null,!1);const u=n.apply(this,s);return o.nextPromise=u,t.emit("propagate",[e,!0],u,!1,!1),u},a.prototype.then[o]=n,t.on("executor-start",(function(e){e[0]=i(e[0],"resolve-",this,null,!1),e[1]=i(e[1],"resolve-",this,null,!1)})),t.on("executor-err",(function(e,t,r){e[1](r)})),t.on("cb-end",(function(e,r,n){t.emit("propagate",[n,!0],this.nextPromise,!1,!1)})),t.on("propagate",(function(e,r,n){this.getCtx&&!r||(this.getCtx=function(){if(e instanceof Promise)var r=t.context(e);return r&&r.getCtx?r.getCtx():this})}))}(),t}const M={},B="setTimeout",F="setInterval",U="clearTimeout",Z="-start",V="-",q=[B,"setImmediate",F,U,"clearImmediate"];function G(e){const t=function(e){return(e||n.ee).get("timer")}(e);if(M[t.debugId]++)return t;M[t.debugId]=1;var r=c(t);return r.inPlace(f._A,q.slice(0,2),B+V),r.inPlace(f._A,q.slice(2,3),F+V),r.inPlace(f._A,q.slice(3),U+V),t.on(F+Z,(function(e,t,n){e[0]=r(e[0],"fn-",null,n)})),t.on(B+Z,(function(e,t,n){this.method=n,this.timerDuration=isNaN(e[1])?0:+e[1],e[0]=r(e[0],"fn-",this,n)})),t}var W=r(50);const X={},Q=["open","send"];function K(e){var t=e||n.ee;const r=function(e){return(e||n.ee).get("xhr")}(t);if(X[r.debugId]++)return r;X[r.debugId]=1,b(t);var i=c(r),o=f._A.XMLHttpRequest,a=f._A.MutationObserver,s=f._A.Promise,u=f._A.setInterval,d="readystatechange",l=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],h=[],p=f._A.XMLHttpRequest=function(e){const t=new o(e),n=r.context(t);try{r.emit("new-xhr",[t],n),t.addEventListener(d,(a=n,function(){var e=this;e.readyState>3&&!a.resolved&&(a.resolved=!0,r.emit("xhr-resolved",[],e)),i.inPlace(e,l,"fn-",A)}),(0,O.m$)(!1))}catch(e){(0,W.Z)("An error occurred while intercepting XHR",e);try{r.emit("internal-error",[e])}catch(e){}}var a;return t};function g(e,t){i.inPlace(t,["onreadystatechange"],"fn-",A)}if(function(e,t){for(var r in e)t[r]=e[r]}(o,p),p.prototype=o.prototype,i.inPlace(p.prototype,Q,"-xhr-",A),r.on("send-xhr-start",(function(e,t){g(e,t),function(e){h.push(e),a&&(m?m.then(w):u?u(w):(v=-v,y.data=v))}(t)})),r.on("open-xhr-start",g),a){var m=s&&s.resolve();if(!u&&!s){var v=1,y=document.createTextNode(v);new a(w).observe(y,{characterData:!0})}}else t.on("fn-end",(function(e){e[0]&&e[0].type===d||w()}));function w(){for(var e=0;e<h.length;e++)g(0,h[e]);h.length&&(h=[])}function A(e,t){return t}return r}},7825:(e,t,r)=>{r.d(t,{t:()=>n});const n=r(3325).D.ajax},6660:(e,t,r)=>{r.d(t,{t:()=>n});const n=r(3325).D.jserrors},3081:(e,t,r)=>{r.d(t,{gF:()=>o,mY:()=>i,t9:()=>n,vz:()=>s,xS:()=>a});const n=r(3325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},4649:(e,t,r)=>{r.d(t,{t:()=>n});const n=r(3325).D.pageAction},7633:(e,t,r)=>{r.d(t,{t:()=>n});const n=r(3325).D.pageViewEvent},9251:(e,t,r)=>{r.d(t,{t:()=>n});const n=r(3325).D.pageViewTiming},7144:(e,t,r)=>{r.d(t,{t:()=>n});const n=r(3325).D.sessionReplay},3614:(e,t,r)=>{r.d(t,{BST_RESOURCE:()=>i,END:()=>s,FEATURE_NAME:()=>n,FN_END:()=>u,FN_START:()=>c,PUSH_STATE:()=>d,RESOURCE:()=>o,START:()=>a});const n=r(3325).D.sessionTrace,i="bstResource",o="resource",a="-start",s="-end",c="fn"+a,u="fn"+s,d="pushState"},7836:(e,t,r)=>{r.d(t,{BODY:()=>x,CB_END:()=>E,CB_START:()=>u,END:()=>A,FEATURE_NAME:()=>i,FETCH:()=>T,FETCH_BODY:()=>v,FETCH_DONE:()=>m,FETCH_START:()=>g,FN_END:()=>c,FN_START:()=>s,INTERACTION:()=>f,INTERACTION_API:()=>d,INTERACTION_EVENTS:()=>o,JSONP_END:()=>b,JSONP_NODE:()=>p,JS_TIME:()=>_,MAX_TIMER_BUDGET:()=>a,REMAINING:()=>l,SPA_NODE:()=>h,START:()=>w,originalSetTimeout:()=>y});var n=r(234);const i=r(3325).D.spa,o=["click","submit","keypress","keydown","keyup","change"],a=999,s="fn-start",c="fn-end",u="cb-start",d="api-ixn-",l="remaining",f="interaction",h="spaNode",p="jsonpNode",g="fetch-start",m="fetch-done",v="fetch-body-",b="jsonp-end",y=n.Yu.ST,w="-start",A="-end",x="-body",E="cb"+A,_="jsTime",T="fetch"},5938:(e,t,r)=>{r.d(t,{W:()=>o});var n=r(234),i=r(8325);class o{constructor(e,t,r){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,n.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=r,this.blocked=!1}}},7530:(e,t,r)=>{r.d(t,{j:()=>b});var n=r(3325),i=r(234),o=r(5546),a=r(8325),s=r(7894),c=r(8e3),u=r(3960),d=r(385),l=r(50),f=r(3081),h=r(8632);function p(){const e=(0,h.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion","start"].forEach((t=>{e[t]=function(){for(var r=arguments.length,n=new Array(r),i=0;i<r;i++)n[i]=arguments[i];return function(t){for(var r=arguments.length,n=new Array(r>1?r-1:0),i=1;i<r;i++)n[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...n))})),o.length>1?o:o[0]}(t,...n)}}))}var g=r(2587);const m=e=>{r.p=e};let v=!1;function b(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},b=arguments.length>2?arguments[2]:void 0,y=arguments.length>3?arguments[3]:void 0,{init:w,info:A,loader_config:x,runtime:E={loaderType:b},exposed:_=!0}=t;const T=(0,h.gG)();A||(w=T.init,A=T.info,x=T.loader_config),(0,i.Dg)(e,w||{}),(0,i.GE)(e,x||{}),A.jsAttributes??={},d.v6&&(A.jsAttributes.isWorker=!0),(0,i.CX)(e,A);const D=(0,i.P_)(e),S=[A.beacon,A.errorBeacon];v||(v=!0,D.proxy.assets&&(m(D.proxy.assets+"/"),S.push(D.proxy.assets)),D.proxy.beacon&&S.push(D.proxy.beacon)),E.denyList=[...D.ajax.deny_list||[],...D.ajax.block_internal?S:[]],(0,i.sU)(e,E),p();const j=function(e,t){t||(0,c.R)(e,"api");const h={};var p=a.ee.get(e),g=p.get("tracer"),m="api-",v=m+"ixn-";function b(t,r,n,o){const a=(0,i.C5)(e);return null===r?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:r}}),A(m,n,!0,o||null===r?"session":void 0)(t,r)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>{h[e]=A(m,e,!0,"api")})),h.addPageAction=A(m,"addPageAction",!0,n.D.pageAction),h.setCurrentRouteName=A(m,"routeName",!0,n.D.spa),h.setPageViewName=function(t,r){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(r||"http://custom.transaction")+t,A(m,"setPageViewName",!0)()},h.setCustomAttribute=function(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",r);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},h.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},h.setApplicationVersion=function(e){if("string"==typeof e||null===e)return b("application.version",e,"setApplicationVersion",!1);(0,l.Z)("Failed to execute setApplicationVersion. Expected <String | null>, but got <".concat(typeof e,">."))},h.start=e=>{try{const t=e?"defined":"undefined";(0,o.p)(f.xS,["API/start/".concat(t,"/called")],void 0,n.D.metrics,p);const r=Object.values(n.D);if(void 0===e)e=r;else{if((e=Array.isArray(e)&&e.length?e:[e]).some((e=>!r.includes(e))))return(0,l.Z)("Invalid feature name supplied. Acceptable feature names are: ".concat(r));e.includes(n.D.pageViewEvent)||e.push(n.D.pageViewEvent)}e.forEach((e=>{p.emit("".concat(e,"-opt-in"))}))}catch(e){(0,l.Z)("An unexpected issue occurred",e)}},h.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var r={},i=this,a="function"==typeof t;return(0,o.p)(v+"tracer",[(0,s.z)(),e,r],i,n.D.spa,p),function(){if(g.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],r),a)try{return t.apply(this,arguments)}catch(e){throw g.emit("fn-err",[arguments,this,e],r),e}finally{g.emit("fn-end",[(0,s.z)()],r)}}}};function A(e,t,r,i){return function(){return(0,o.p)(f.xS,["API/"+t+"/called"],void 0,n.D.metrics,p),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],r?null:this,i,p),r?void 0:this}}function x(){r.e(111).then(r.bind(r,7438)).then((t=>{let{setAPI:r}=t;r(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(v,e,void 0,n.D.spa)})),h.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(f.xS,["API/noticeError/called"],void 0,n.D.metrics,p),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,n.D.jserrors,p)},d.il?(0,u.b)((()=>x()),!0):x(),h}(e,y);return(0,h.Qy)(e,j,"api"),(0,h.Qy)(e,_,"exposed"),(0,h.EZ)("activatedFeatures",g.T),j}},3325:(e,t,r)=>{r.d(t,{D:()=>n,p:()=>i});const n={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[n.pageViewEvent]:1,[n.pageViewTiming]:2,[n.metrics]:3,[n.jserrors]:4,[n.ajax]:5,[n.sessionTrace]:6,[n.pageAction]:7,[n.spa]:8,[n.sessionReplay]:9}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var o=n[e]={exports:{}};return r[e](o,o.exports,i),o.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,r)=>(i.f[r](e,t),t)),[])),i.u=e=>({111:"nr-spa",164:"nr-spa-compressor",433:"nr-spa-recorder"}[e]+"-1.242.0.min.js"),i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.242.0.PROD:",i.l=(r,n,o,a)=>{if(e[r])e[r].push(n);else{var s,c;if(void 0!==o)for(var u=document.getElementsByTagName("script"),d=0;d<u.length;d++){var l=u[d];if(l.getAttribute("src")==r||l.getAttribute("data-webpack")==t+o){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=r),e[r]=[n];var f=(t,n)=>{s.onerror=s.onload=null,clearTimeout(h);var i=e[r];if(delete e[r],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(n))),t)return t(n)},h=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={801:0,92:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var o=new Promise(((r,i)=>n=e[t]=[r,i]));r.push(n[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var o=r&&("load"===r.type?"missing":r.type),a=r&&r.target&&r.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,n[1](s)}}),"chunk-"+t,t)}};var t=(t,r)=>{var n,o,[a,s,c]=r,u=0;if(a.some((t=>0!==e[t]))){for(n in s)i.o(s,n)&&(i.m[n]=s[n]);if(c)c(i)}for(t&&t(r);u<a.length;u++)o=a[u],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},r=self["webpackChunk:NRBA-1.242.0.PROD"]=self["webpackChunk:NRBA-1.242.0.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{var e=i(50);class t{addPageAction(t,r){(0,e.Z)("Call to agent api addPageAction failed. The session trace feature is not currently initialized.")}setPageViewName(t,r){(0,e.Z)("Call to agent api setPageViewName failed. The page view feature is not currently initialized.")}setCustomAttribute(t,r,n){(0,e.Z)("Call to agent api setCustomAttribute failed. The js errors feature is not currently initialized.")}noticeError(t,r){(0,e.Z)("Call to agent api noticeError failed. The js errors feature is not currently initialized.")}setUserId(t){(0,e.Z)("Call to agent api setUserId failed. The js errors feature is not currently initialized.")}setApplicationVersion(t){(0,e.Z)("Call to agent api setApplicationVersion failed. The agent is not currently initialized.")}setErrorHandler(t){(0,e.Z)("Call to agent api setErrorHandler failed. The js errors feature is not currently initialized.")}finished(t){(0,e.Z)("Call to agent api finished failed. The page action feature is not currently initialized.")}addRelease(t,r){(0,e.Z)("Call to agent api addRelease failed. The agent is not currently initialized.")}start(t){(0,e.Z)("Call to agent api addRelease failed. The agent is not currently initialized.")}}var r=i(3325),n=i(234);const o=Object.values(r.D);function a(e){const t={};return o.forEach((r=>{t[r]=function(e,t){return!1!==(0,n.Mt)(t,"".concat(e,".enabled"))}(r,e)})),t}var s=i(7530);var c=i(8e3),u=i(5938),d=i(3960),l=i(385);class f extends u.W{constructor(e,t,r){let i=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,r),this.auto=i,this.abortHandler=void 0,this.featAggregate=void 0,this.onAggregateImported=void 0,!1===(0,n.Mt)(this.agentIdentifier,"".concat(this.featureName,".autoStart"))&&(this.auto=!1),this.auto&&(0,c.R)(e,r)}importAggregator(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate)return;if(!this.auto)return void this.ee.on("".concat(this.featureName,"-opt-in"),(()=>{(0,c.R)(this.agentIdentifier,this.featureName),this.auto=!0,this.importAggregator()}));const r=l.il&&!0===(0,n.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let o;this.onAggregateImported=new Promise((e=>{o=e}));const a=async()=>{let n;try{if(r){const{setupAgentSession:e}=await i.e(111).then(i.bind(i,3228));n=e(this.agentIdentifier)}}catch(t){(0,e.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",t)}try{if(!this.shouldImportAgg(this.featureName,n))return(0,c.L)(this.agentIdentifier,this.featureName),void o(!1);const{lazyFeatureLoader:e}=await i.e(111).then(i.bind(i,8582)),{Aggregate:r}=await e(this.featureName,"aggregate");this.featAggregate=new r(this.agentIdentifier,this.aggregator,t),o(!0)}catch(t){(0,e.Z)("Downloading and initializing ".concat(this.featureName," failed..."),t),this.abortHandler?.(),(0,c.L)(this.agentIdentifier,this.featureName),o(!1)}};l.il?(0,d.b)((()=>a()),!0):a()}shouldImportAgg(e,t){return e!==r.D.sessionReplay||!!n.Yu.MO&&(!1!==(0,n.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!t?.isNew||!!t?.state.sessionReplay))}}var h=i(7633);class p extends f{static featureName=h.t;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,h.t,r),this.importAggregator()}}var g=i(1117),m=i(1284);class v extends g.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,r,n,i){var o=this.getBucket(e,t,r,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,m.D)(e,(function(e,r){t[e]=b(r,t[e])})),t}(n,o.metrics),o}merge(e,t,r,n,i){var o=this.getBucket(e,t,n,i);if(o.metrics){var a=o.metrics;a.count+=r.count,(0,m.D)(r,(function(e,t){if("count"!==e){var n=a[e],i=r[e];i&&!i.c?a[e]=b(i.t,n):a[e]=function(e,t){if(!t)return e;t.c||(t=y(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=r}storeMetric(e,t,r,n){var i=this.getBucket(e,t,r);return i.stats=b(n,i.stats),i}getBucket(e,t,r,n){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:r||{}},n&&(i.custom=n)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},r="",n=!1,i=0;i<e.length;i++)t[r=e[i]]=w(this.aggregatedData[r]),t[r].length&&(n=!0),delete this.aggregatedData[r];return n?t:null}}function b(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=y(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function y(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function w(e){return"object"!=typeof e?[]:(0,m.D)(e,A)}function A(e,t){return t}var x=i(8632),E=i(4402),_=i(4351);var T=i(5546),D=i(7956),S=i(3239),j=i(7894),N=i(9251);class C extends f{static featureName=N.t;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,N.t,r),l.il&&((0,D.N)((()=>(0,T.p)("docHidden",[(0,j.z)()],void 0,N.t,this.ee)),!0),(0,S.bP)("pagehide",(()=>(0,T.p)("winPagehide",[(0,j.z)()],void 0,N.t,this.ee))),this.importAggregator())}}var O=i(3081);class P extends f{static featureName=O.t9;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,O.t9,r),this.importAggregator()}}var R=i(6660);class I{constructor(e,t,r,n){this.name="UncaughtError",this.message=e,this.sourceURL=t,this.line=r,this.column=n}}class k extends f{static featureName=R.t;#e=new Set;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,R.t,n);try{this.removeOnAbort=new AbortController}catch(e){}this.ee.on("fn-err",((e,t,n)=>{this.abortHandler&&!this.#e.has(n)&&(this.#e.add(n),(0,T.p)("err",[this.#t(n),(0,j.z)()],void 0,r.D.jserrors,this.ee))})),this.ee.on("internal-error",(e=>{this.abortHandler&&(0,T.p)("ierr",[this.#t(e),(0,j.z)(),!0],void 0,r.D.jserrors,this.ee)})),l._A.addEventListener("unhandledrejection",(e=>{this.abortHandler&&(0,T.p)("err",[this.#r(e),(0,j.z)(),!1,{unhandledPromiseRejection:1}],void 0,r.D.jserrors,this.ee)}),(0,S.m$)(!1,this.removeOnAbort?.signal)),l._A.addEventListener("error",(e=>{this.abortHandler&&(this.#e.has(e.error)?this.#e.delete(e.error):(0,T.p)("err",[this.#n(e),(0,j.z)()],void 0,r.D.jserrors,this.ee))}),(0,S.m$)(!1,this.removeOnAbort?.signal)),this.abortHandler=this.#i,this.importAggregator()}#i(){this.removeOnAbort?.abort(),this.#e.clear(),this.abortHandler=void 0}#t(e){return e instanceof Error?e:void 0!==e?.message?new I(e.message,e.filename||e.sourceURL,e.lineno||e.line,e.colno||e.col):new I("string"==typeof e?e:(0,_.P)(e))}#r(e){let t="Unhandled Promise Rejection: ";if(e?.reason instanceof Error)try{return e.reason.message=t+e.reason.message,e.reason}catch(t){return e.reason}if(void 0===e.reason)return new I(t);const r=this.#t(e.reason);return r.message=t+r.message,r}#n(e){return e.error instanceof Error?e.error:new I(e.message,e.filename,e.lineno,e.colno)}}var H=i(2210);let z=1;const L="nr@id";function M(e){const t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===l._A?0:(0,H.X)(e,L,(function(){return z++}))}function B(e){if("string"==typeof e&&e.length)return e.length;if("object"==typeof e){if("undefined"!=typeof ArrayBuffer&&e instanceof ArrayBuffer&&e.byteLength)return e.byteLength;if("undefined"!=typeof Blob&&e instanceof Blob&&e.size)return e.size;if(!("undefined"!=typeof FormData&&e instanceof FormData))try{return(0,_.P)(e).length}catch(e){return}}}var F=i(1214),U=i(7243);class Z{constructor(e){this.agentIdentifier=e}generateTracePayload(e){if(!this.shouldGenerateTrace(e))return null;var t=(0,n.DL)(this.agentIdentifier);if(!t)return null;var r=(t.accountID||"").toString()||null,i=(t.agentID||"").toString()||null,o=(t.trustKey||"").toString()||null;if(!r||!i)return null;var a=(0,E.M)(),s=(0,E.Ht)(),c=Date.now(),u={spanId:a,traceId:s,timestamp:c};return(e.sameOrigin||this.isAllowedOrigin(e)&&this.useTraceContextHeadersForCors())&&(u.traceContextParentHeader=this.generateTraceContextParentHeader(a,s),u.traceContextStateHeader=this.generateTraceContextStateHeader(a,c,r,i,o)),(e.sameOrigin&&!this.excludeNewrelicHeader()||!e.sameOrigin&&this.isAllowedOrigin(e)&&this.useNewrelicHeaderForCors())&&(u.newrelicHeader=this.generateTraceHeader(a,s,c,r,i,o)),u}generateTraceContextParentHeader(e,t){return"00-"+t+"-"+e+"-01"}generateTraceContextStateHeader(e,t,r,n,i){return i+"@nr=0-1-"+r+"-"+n+"-"+e+"----"+t}generateTraceHeader(e,t,r,n,i,o){if(!("function"==typeof l._A?.btoa))return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:i,id:e,tr:t,ti:r}};return o&&n!==o&&(a.d.tk=o),btoa((0,_.P)(a))}shouldGenerateTrace(e){return this.isDtEnabled()&&this.isAllowedOrigin(e)}isAllowedOrigin(e){var t=!1,r={};if((0,n.Mt)(this.agentIdentifier,"distributed_tracing")&&(r=(0,n.P_)(this.agentIdentifier).distributed_tracing),e.sameOrigin)t=!0;else if(r.allowed_origins instanceof Array)for(var i=0;i<r.allowed_origins.length;i++){var o=(0,U.e)(r.allowed_origins[i]);if(e.hostname===o.hostname&&e.protocol===o.protocol&&e.port===o.port){t=!0;break}}return t}isDtEnabled(){var e=(0,n.Mt)(this.agentIdentifier,"distributed_tracing");return!!e&&!!e.enabled}excludeNewrelicHeader(){var e=(0,n.Mt)(this.agentIdentifier,"distributed_tracing");return!!e&&!!e.exclude_newrelic_header}useNewrelicHeaderForCors(){var e=(0,n.Mt)(this.agentIdentifier,"distributed_tracing");return!!e&&!1!==e.cors_use_newrelic_header}useTraceContextHeadersForCors(){var e=(0,n.Mt)(this.agentIdentifier,"distributed_tracing");return!!e&&!!e.cors_use_tracecontext_headers}}var V=i(7825),q=["load","error","abort","timeout"],G=q.length,W=n.Yu.REQ,X=n.Yu.XHR;class Q extends f{static featureName=V.t;constructor(e,t){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(super(e,t,V.t,i),(0,n.OP)(e).xhrWrappable){this.dt=new Z(e),this.handler=(e,t,r,n)=>(0,T.p)(e,t,r,n,this.ee);try{const e={xmlhttprequest:"xhr",fetch:"fetch",beacon:"beacon"};l._A?.performance?.getEntriesByType("resource").forEach((t=>{if(t.initiatorType in e&&0!==t.responseStatus){const n={status:t.responseStatus},i={rxSize:t.transferSize,duration:Math.floor(t.duration),cbTime:0};K(n,t.name),this.handler("xhr",[n,i,t.startTime,t.responseEnd,e[t.initiatorType]],void 0,r.D.ajax)}}))}catch(e){}(0,F.u5)(this.ee),(0,F.Kf)(this.ee),function(e,t,i,o){function a(e){var t=this;t.totalCbs=0,t.called=0,t.cbTime=0,t.end=x,t.ended=!1,t.xhrGuids={},t.lastSize=null,t.loadCaptureCalled=!1,t.params=this.params||{},t.metrics=this.metrics||{},e.addEventListener("load",(function(r){E(t,e)}),(0,S.m$)(!1)),l.IF||e.addEventListener("progress",(function(e){t.lastSize=e.loaded}),(0,S.m$)(!1))}function s(e){this.params={method:e[0]},K(this,e[1]),this.metrics={}}function c(t,r){var i=(0,n.DL)(e);i.xpid&&this.sameOrigin&&r.setRequestHeader("X-NewRelic-ID",i.xpid);var a=o.generateTracePayload(this.parsedOrigin);if(a){var s=!1;a.newrelicHeader&&(r.setRequestHeader("newrelic",a.newrelicHeader),s=!0),a.traceContextParentHeader&&(r.setRequestHeader("traceparent",a.traceContextParentHeader),a.traceContextStateHeader&&r.setRequestHeader("tracestate",a.traceContextStateHeader),s=!0),s&&(this.dt=a)}}function u(e,r){var n=this.metrics,i=e[0],o=this;if(n&&i){var a=B(i);a&&(n.txSize=a)}this.startTime=(0,j.z)(),this.listener=function(e){try{"abort"!==e.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==e.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof r.onload)&&"function"==typeof o.end)&&o.end(r)}catch(e){try{t.emit("internal-error",[e])}catch(e){}}};for(var s=0;s<G;s++)r.addEventListener(q[s],this.listener,(0,S.m$)(!1))}function d(e,t,r){this.cbTime+=e,t?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof r.onload||"function"!=typeof this.end||this.end(r)}function f(e,t){var r=""+M(e)+!!t;this.xhrGuids&&!this.xhrGuids[r]&&(this.xhrGuids[r]=!0,this.totalCbs+=1)}function h(e,t){var r=""+M(e)+!!t;this.xhrGuids&&this.xhrGuids[r]&&(delete this.xhrGuids[r],this.totalCbs-=1)}function p(){this.endTime=(0,j.z)()}function g(e,r){r instanceof X&&"load"===e[0]&&t.emit("xhr-load-added",[e[1],e[2]],r)}function m(e,r){r instanceof X&&"load"===e[0]&&t.emit("xhr-load-removed",[e[1],e[2]],r)}function v(e,t,r){t instanceof X&&("onload"===r&&(this.onload=!0),("load"===(e[0]&&e[0].type)||this.onload)&&(this.xhrCbStart=(0,j.z)()))}function b(e,r){this.xhrCbStart&&t.emit("xhr-cb-time",[(0,j.z)()-this.xhrCbStart,this.onload,r],r)}function y(e){var t,r=e[1]||{};if("string"==typeof e[0]?0===(t=e[0]).length&&l.il&&(t=""+l._A.location.href):e[0]&&e[0].url?t=e[0].url:l._A?.URL&&e[0]&&e[0]instanceof URL?t=e[0].href:"function"==typeof e[0].toString&&(t=e[0].toString()),"string"==typeof t&&0!==t.length){t&&(this.parsedOrigin=(0,U.e)(t),this.sameOrigin=this.parsedOrigin.sameOrigin);var n=o.generateTracePayload(this.parsedOrigin);if(n&&(n.newrelicHeader||n.traceContextParentHeader))if(e[0]&&e[0].headers)s(e[0].headers,n)&&(this.dt=n);else{var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),s(i.headers,n)&&(this.dt=n),e.length>1?e[1]=i:e.push(i)}}function s(e,t){var r=!1;return t.newrelicHeader&&(e.set("newrelic",t.newrelicHeader),r=!0),t.traceContextParentHeader&&(e.set("traceparent",t.traceContextParentHeader),t.traceContextStateHeader&&e.set("tracestate",t.traceContextStateHeader),r=!0),r}}function w(e,t){this.params={},this.metrics={},this.startTime=(0,j.z)(),this.dt=t,e.length>=1&&(this.target=e[0]),e.length>=2&&(this.opts=e[1]);var r,n=this.opts||{},i=this.target;"string"==typeof i?r=i:"object"==typeof i&&i instanceof W?r=i.url:l._A?.URL&&"object"==typeof i&&i instanceof URL&&(r=i.href),K(this,r);var o=(""+(i&&i instanceof W&&i.method||n.method||"GET")).toUpperCase();this.params.method=o,this.txSize=B(n.body)||0}function A(e,t){var n;this.endTime=(0,j.z)(),this.params||(this.params={}),this.params.status=t?t.status:0,"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var o={txSize:this.txSize,rxSize:n,duration:(0,j.z)()-this.startTime};i("xhr",[this.params,o,this.startTime,this.endTime,"fetch"],this,r.D.ajax)}function x(e){var t=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var o=0;o<G;o++)e.removeEventListener(q[o],this.listener,!1);t.aborted||(n.duration=(0,j.z)()-this.startTime,this.loadCaptureCalled||4!==e.readyState?null==t.status&&(t.status=0):E(this,e),n.cbTime=this.cbTime,i("xhr",[t,n,this.startTime,this.endTime,"xhr"],this,r.D.ajax))}}function E(e,t){e.params.status=t.status;var r=function(e,t){var r=e.responseType;return"json"===r&&null!==t?t:"arraybuffer"===r||"blob"===r||"json"===r?B(e.response):"text"===r||""===r||void 0===r?B(e.responseText):void 0}(t,e.lastSize);if(r&&(e.metrics.rxSize=r),e.sameOrigin){var n=t.getResponseHeader("X-NewRelic-App-Data");n&&(e.params.cat=n.split(", ").pop())}e.loadCaptureCalled=!0}t.on("new-xhr",a),t.on("open-xhr-start",s),t.on("open-xhr-end",c),t.on("send-xhr-start",u),t.on("xhr-cb-time",d),t.on("xhr-load-added",f),t.on("xhr-load-removed",h),t.on("xhr-resolved",p),t.on("addEventListener-end",g),t.on("removeEventListener-end",m),t.on("fn-end",b),t.on("fetch-before-start",y),t.on("fetch-start",w),t.on("fn-start",v),t.on("fetch-done",A)}(e,this.ee,this.handler,this.dt),this.importAggregator()}}}function K(e,t){var r=(0,U.e)(t),n=e.params||e;n.hostname=r.hostname,n.port=r.port,n.protocol=r.protocol,n.host=r.hostname+":"+r.port,n.pathname=r.pathname,e.parsedOrigin=r,e.sameOrigin=r.sameOrigin}var Y=i(3614);const{BST_RESOURCE:J,RESOURCE:ee,START:te,END:re,FEATURE_NAME:ne,FN_END:ie,FN_START:oe,PUSH_STATE:ae}=Y;var se=i(7144);class ce extends f{static featureName=se.t;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,se.t,r),this.importAggregator()}}var ue=i(7836);const{FEATURE_NAME:de,START:le,END:fe,BODY:he,CB_END:pe,JS_TIME:ge,FETCH:me,FN_START:ve,CB_START:be,FN_END:ye}=ue;var we=i(4649);class Ae extends f{static featureName=we.t;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,we.t,r),this.importAggregator()}}new class extends t{constructor(t){let r=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,E.ky)(16);super(),l._A?(this.agentIdentifier=r,this.sharedAggregator=new v({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(p),Object.assign(this,(0,s.j)(this.agentIdentifier,t,t.loaderType||"agent")),this.run()):(0,e.Z)("Failed to initial the agent. Could not determine the runtime environment.")}get config(){return{info:(0,n.C5)(this.agentIdentifier),init:(0,n.P_)(this.agentIdentifier),loader_config:(0,n.DL)(this.agentIdentifier),runtime:(0,n.OP)(this.agentIdentifier)}}run(){const t="features";try{const n=a(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((e,t)=>r.p[e.featureName]-r.p[t.featureName])),i.forEach((t=>{if(n[t.featureName]||t.featureName===r.D.pageViewEvent){const i=function(e){switch(e){case r.D.ajax:return[r.D.jserrors];case r.D.sessionTrace:return[r.D.ajax,r.D.pageViewEvent];case r.D.sessionReplay:return[r.D.sessionTrace];case r.D.pageViewTiming:return[r.D.pageViewEvent];default:return[]}}(t.featureName);i.every((e=>n[e]))||(0,e.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,_.P)(i),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,x.Qy)(this.agentIdentifier,this.features,t)}catch(r){(0,e.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",r);for(const e in this.features)this.features[e].abortHandler?.();const n=(0,x.fP)();return delete n.initializedAgents[this.agentIdentifier]?.api,delete n.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,n.ee?.abort(),delete n.ee?.get(this.agentIdentifier),!1}}addToTrace(t){(0,e.Z)("Call to agent api addToTrace failed. The page action feature is not currently initialized.")}setCurrentRouteName(t){(0,e.Z)("Call to agent api setCurrentRouteName failed. The spa feature is not currently initialized.")}interaction(){(0,e.Z)("Call to agent api interaction failed. The spa feature is not currently initialized.")}}({features:[Q,p,C,class extends f{static featureName=ne;constructor(e,t){if(super(e,t,ne,!(arguments.length>2&&void 0!==arguments[2])||arguments[2]),!l.il)return;const n=this.ee;let i;(0,F.QU)(n),this.eventsEE=(0,F.em)(n),this.eventsEE.on(oe,(function(e,t){this.bstStart=(0,j.z)()})),this.eventsEE.on(ie,(function(e,t){(0,T.p)("bst",[e[0],t,this.bstStart,(0,j.z)()],void 0,r.D.sessionTrace,n)})),n.on(ae+te,(function(e){this.time=(0,j.z)(),this.startPath=location.pathname+location.hash})),n.on(ae+re,(function(e){(0,T.p)("bstHist",[location.pathname+location.hash,this.startPath,this.time],void 0,r.D.sessionTrace,n)}));try{i=new PerformanceObserver((e=>{const t=e.getEntries();(0,T.p)(J,[t],void 0,r.D.sessionTrace,n)})),i.observe({type:ee,buffered:!0})}catch(e){}this.importAggregator({resourceObserver:i})}},ce,P,Ae,k,class extends f{static featureName=de;constructor(e,t){if(super(e,t,de,!(arguments.length>2&&void 0!==arguments[2])||arguments[2]),!l.il)return;if(!(0,n.OP)(e).xhrWrappable)return;try{this.removeOnAbort=new AbortController}catch(e){}let r,i=0;const o=this.ee.get("tracer"),a=(0,F._L)(this.ee),s=(0,F.Lg)(this.ee),c=(0,F.BV)(this.ee),u=(0,F.Kf)(this.ee),d=this.ee.get("events"),f=(0,F.u5)(this.ee),h=(0,F.QU)(this.ee),p=(0,F.Gm)(this.ee);function g(e,t){h.emit("newURL",[""+window.location,t])}function m(){i++,r=window.location.hash,this[ve]=(0,j.z)()}function v(){i--,window.location.hash!==r&&g(0,!0);var e=(0,j.z)();this[ge]=~~this[ge]+e-this[ve],this[ye]=e}function b(e,t){e.on(t,(function(){this[t]=(0,j.z)()}))}this.ee.on(ve,m),s.on(be,m),a.on(be,m),this.ee.on(ye,v),s.on(pe,v),a.on(pe,v),this.ee.buffer([ve,ye,"xhr-resolved"],this.featureName),d.buffer([ve],this.featureName),c.buffer(["setTimeout"+fe,"clearTimeout"+le,ve],this.featureName),u.buffer([ve,"new-xhr","send-xhr"+le],this.featureName),f.buffer([me+le,me+"-done",me+he+le,me+he+fe],this.featureName),h.buffer(["newURL"],this.featureName),p.buffer([ve],this.featureName),s.buffer(["propagate",be,pe,"executor-err","resolve"+le],this.featureName),o.buffer([ve,"no-"+ve],this.featureName),a.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"],this.featureName),b(f,me+le),b(f,me+"-done"),b(a,"new-jsonp"),b(a,"jsonp-end"),b(a,"cb-start"),h.on("pushState-end",g),h.on("replaceState-end",g),window.addEventListener("hashchange",g,(0,S.m$)(!0,this.removeOnAbort?.signal)),window.addEventListener("load",g,(0,S.m$)(!0,this.removeOnAbort?.signal)),window.addEventListener("popstate",(function(){g(0,i>1)}),(0,S.m$)(!0,this.removeOnAbort?.signal)),this.abortHandler=this.#i,this.importAggregator()}#i(){this.removeOnAbort?.abort(),this.abortHandler=void 0}}],loaderType:"spa"})})()})();</script><script defer="defer" src="/runtime.0023aad003c389782c86.js"></script><script defer="defer" src="/vendors.337.8c3433edf4911533044e.js"></script><script defer="defer" src="/polyfill.92c3eac326a2692bf221.js"></script><script defer="defer" src="/vendors.947.3f42b363340182b8c12d.js"></script><script defer="defer" src="/app.a40c9b250e99268f4ead.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style data-jss="" data-meta="MuiSvgIcon">
+.MuiSvgIcon-root {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}
+.MuiSvgIcon-colorPrimary {
+  color: #004494;
+}
+.MuiSvgIcon-colorSecondary {
+  color: #FFD617;
+}
+.MuiSvgIcon-colorAction {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiSvgIcon-colorError {
+  color: #EC0A00;
+}
+.MuiSvgIcon-colorDisabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+.MuiSvgIcon-fontSizeInherit {
+  font-size: inherit;
+}
+.MuiSvgIcon-fontSizeSmall {
+  font-size: 1.25rem;
+}
+.MuiSvgIcon-fontSizeLarge {
+  font-size: 2.1875rem;
+}
+</style><style data-jss="" data-meta="MuiButtonBase">
+.MuiButtonBase-root {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiButtonBase-root::-moz-focus-inner {
+  border-style: none;
+}
+.MuiButtonBase-root.Mui-disabled {
+  cursor: default;
+  pointer-events: none;
+}
+@media print {
+  .MuiButtonBase-root {
+    -webkit-print-color-adjust: exact;
+  }
+}
+</style><style data-jss="" data-meta="MuiButton">
+.MuiButton-root {
+  color: #404040;
+  padding: 6px 16px;
+  font-size: 16px;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.75;
+  border-radius: 0;
+  text-transform: none;
+}
+.MuiButton-root:hover {
+  text-decoration: none;
+  background-color: rgba(64, 64, 64, 0.04);
+}
+.MuiButton-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButton-root:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-root:hover.Mui-disabled {
+  background-color: transparent;
+}
+.MuiButton-label {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+}
+.MuiButton-text {
+  padding: 6px 8px;
+}
+.MuiButton-textPrimary {
+  color: #004494;
+}
+.MuiButton-textPrimary:hover {
+  background-color: rgba(0, 68, 148, 0.04);
+}
+@media (hover: none) {
+  .MuiButton-textPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-textSecondary {
+  color: #FFD617;
+}
+.MuiButton-textSecondary:hover {
+  background-color: rgba(255, 214, 23, 0.04);
+}
+@media (hover: none) {
+  .MuiButton-textSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-outlined {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  padding: 5px 15px;
+}
+.MuiButton-outlined.Mui-disabled {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.MuiButton-outlinedPrimary {
+  color: #004494;
+  border: 1px solid rgba(0, 68, 148, 0.5);
+}
+.MuiButton-outlinedPrimary:hover {
+  border: 1px solid #004494;
+  background-color: rgba(0, 68, 148, 0.04);
+}
+@media (hover: none) {
+  .MuiButton-outlinedPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-outlinedSecondary {
+  color: #FFD617;
+  border: 1px solid rgba(255, 214, 23, 0.5);
+}
+.MuiButton-outlinedSecondary:hover {
+  border: 1px solid #FFD617;
+  background-color: rgba(255, 214, 23, 0.04);
+}
+.MuiButton-outlinedSecondary.Mui-disabled {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButton-outlinedSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-contained {
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: none;
+  background-color: #B3B3B3;
+}
+.MuiButton-contained:hover {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+  background-color: #d5d5d5;
+}
+.MuiButton-contained.Mui-focusVisible {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiButton-contained:active {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiButton-contained.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.MuiButton-contained:active, .MuiButton-contained:hover {
+  box-shadow: none;
+}
+@media (hover: none) {
+  .MuiButton-contained:hover {
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+    background-color: #B3B3B3;
+  }
+}
+.MuiButton-contained:hover.Mui-disabled {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.MuiButton-containedPrimary {
+  color: #fff;
+  background-color: #004494;
+}
+.MuiButton-containedPrimary:hover {
+  background-color: #002F67;
+}
+@media (hover: none) {
+  .MuiButton-containedPrimary:hover {
+    background-color: #004494;
+  }
+}
+.MuiButton-containedSecondary {
+  color: #404040;
+  background-color: #FFD617;
+}
+.MuiButton-containedSecondary:hover {
+  background-color: #F8AE21;
+}
+@media (hover: none) {
+  .MuiButton-containedSecondary:hover {
+    background-color: #FFD617;
+  }
+}
+.MuiButton-disableElevation {
+  box-shadow: none;
+}
+.MuiButton-disableElevation:hover {
+  box-shadow: none;
+}
+.MuiButton-disableElevation.Mui-focusVisible {
+  box-shadow: none;
+}
+.MuiButton-disableElevation:active {
+  box-shadow: none;
+}
+.MuiButton-disableElevation.Mui-disabled {
+  box-shadow: none;
+}
+.MuiButton-colorInherit {
+  color: inherit;
+  border-color: currentColor;
+}
+.MuiButton-textSizeSmall {
+  padding: 4px 5px;
+  font-size: 0.8125rem;
+}
+.MuiButton-textSizeLarge {
+  padding: 8px 11px;
+  font-size: 0.9375rem;
+}
+.MuiButton-outlinedSizeSmall {
+  padding: 3px 9px;
+  font-size: 0.8125rem;
+}
+.MuiButton-outlinedSizeLarge {
+  padding: 7px 21px;
+  font-size: 0.9375rem;
+}
+.MuiButton-containedSizeSmall {
+  padding: 4px 10px;
+  font-size: 0.8125rem;
+}
+.MuiButton-containedSizeLarge {
+  padding: 8px 22px;
+  font-size: 0.9375rem;
+}
+.MuiButton-fullWidth {
+  width: 100%;
+}
+.MuiButton-startIcon {
+  display: inherit;
+  margin-left: -4px;
+  margin-right: 8px;
+}
+.MuiButton-startIcon.MuiButton-iconSizeSmall {
+  margin-left: -2px;
+}
+.MuiButton-endIcon {
+  display: inherit;
+  margin-left: 8px;
+  margin-right: -4px;
+}
+.MuiButton-endIcon.MuiButton-iconSizeSmall {
+  margin-right: -2px;
+}
+.MuiButton-iconSizeSmall > *:first-child {
+  font-size: 18px;
+}
+.MuiButton-iconSizeMedium > *:first-child {
+  font-size: 20px;
+}
+.MuiButton-iconSizeLarge > *:first-child {
+  font-size: 22px;
+}
+</style><style data-jss="" data-meta="MuiPaper">
+.MuiPaper-root {
+  color: #404040;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #fff;
+}
+.MuiPaper-rounded {
+  border-radius: 4px;
+}
+.MuiPaper-outlined {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.MuiPaper-elevation0 {
+  box-shadow: none;
+}
+.MuiPaper-elevation1 {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation2 {
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation3 {
+  box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation4 {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation5 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation6 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation7 {
+  box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation8 {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation9 {
+  box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation10 {
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation11 {
+  box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation12 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation13 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation14 {
+  box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation15 {
+  box-shadow: 0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation16 {
+  box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation17 {
+  box-shadow: 0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation18 {
+  box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation19 {
+  box-shadow: 0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation20 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation21 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation22 {
+  box-shadow: 0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation23 {
+  box-shadow: 0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation24 {
+  box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);
+}
+</style><style data-jss="" data-meta="MuiList">
+.MuiList-root {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+}
+.MuiList-padding {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.MuiList-subheader {
+  padding-top: 0;
+}
+</style><style data-jss="" data-meta="MuiListItem">
+.MuiListItem-root {
+  width: 100%;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.MuiListItem-root.Mui-focusVisible {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.MuiListItem-root.Mui-disabled {
+  opacity: 0.5;
+}
+.MuiListItem-container {
+  position: relative;
+}
+.MuiListItem-dense {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.MuiListItem-alignItemsFlexStart {
+  align-items: flex-start;
+}
+.MuiListItem-divider {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-clip: padding-box;
+}
+.MuiListItem-gutters {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.MuiListItem-button {
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiListItem-button:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+@media (hover: none) {
+  .MuiListItem-button:hover {
+    background-color: transparent;
+  }
+}
+.MuiListItem-secondaryAction {
+  padding-right: 48px;
+}
+</style><style data-jss="" data-meta="MuiDivider">
+.MuiDivider-root {
+  border: none;
+  height: 1px;
+  margin: 0;
+  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.MuiDivider-absolute {
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+.MuiDivider-inset {
+  margin-left: 72px;
+}
+.MuiDivider-light {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.MuiDivider-middle {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.MuiDivider-vertical {
+  width: 1px;
+  height: 100%;
+}
+.MuiDivider-flexItem {
+  height: auto;
+  align-self: stretch;
+}
+</style><style data-jss="" data-meta="MuiTypography">
+.MuiTypography-root {
+  margin: 0;
+}
+.MuiTypography-body2 {
+  margin: 0 0 1rem;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.MuiTypography-body1 {
+  margin: 0 0 1rem;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.MuiTypography-caption {
+  font-size: 0.75rem;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.66;
+}
+.MuiTypography-button {
+  font-size: 0.875rem;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.75;
+  text-transform: none;
+}
+.MuiTypography-h1 {
+  margin: 0 0 1rem;
+  font-size: 1.4375rem;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+@media (min-width:600px) {
+  .MuiTypography-h1 {
+    font-size: 1.6667rem;
+  }
+}
+@media (min-width:960px) {
+  .MuiTypography-h1 {
+    font-size: 1.6667rem;
+  }
+}
+@media (min-width:1280px) {
+  .MuiTypography-h1 {
+    font-size: 1.875rem;
+  }
+}
+.MuiTypography-h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+@media (min-width:600px) {
+  .MuiTypography-h2 {
+    font-size: 1.4583rem;
+  }
+}
+@media (min-width:960px) {
+  .MuiTypography-h2 {
+    font-size: 1.4583rem;
+  }
+}
+@media (min-width:1280px) {
+  .MuiTypography-h2 {
+    font-size: 1.4583rem;
+  }
+}
+.MuiTypography-h3 {
+  margin: 0 0 1rem;
+  font-size: 1.125rem;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+@media (min-width:600px) {
+  .MuiTypography-h3 {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width:960px) {
+  .MuiTypography-h3 {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width:1280px) {
+  .MuiTypography-h3 {
+    font-size: 1.25rem;
+  }
+}
+.MuiTypography-h4 {
+  margin: 0 0 1rem;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.MuiTypography-h5 {
+  margin: 0 0 1rem;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.MuiTypography-h6 {
+  margin: 0 0 1rem;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.MuiTypography-subtitle1 {
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+}
+.MuiTypography-subtitle2 {
+  font-size: 0.875rem;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.57;
+}
+.MuiTypography-overline {
+  font-size: 0.75rem;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 2.66;
+  text-transform: uppercase;
+}
+.MuiTypography-srOnly {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+.MuiTypography-alignLeft {
+  text-align: left;
+}
+.MuiTypography-alignCenter {
+  text-align: center;
+}
+.MuiTypography-alignRight {
+  text-align: right;
+}
+.MuiTypography-alignJustify {
+  text-align: justify;
+}
+.MuiTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.MuiTypography-gutterBottom {
+  margin-bottom: 0.35em;
+}
+.MuiTypography-paragraph {
+  margin-bottom: 16px;
+}
+.MuiTypography-colorInherit {
+  color: inherit;
+}
+.MuiTypography-colorPrimary {
+  color: #004494;
+}
+.MuiTypography-colorSecondary {
+  color: #FFD617;
+}
+.MuiTypography-colorTextPrimary {
+  color: #404040;
+}
+.MuiTypography-colorTextSecondary {
+  color: #404040;
+}
+.MuiTypography-colorError {
+  color: #EC0A00;
+}
+.MuiTypography-displayInline {
+  display: inline;
+}
+.MuiTypography-displayBlock {
+  display: block;
+}
+</style><style data-jss="" data-meta="MuiGrid">
+.MuiGrid-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.MuiGrid-item {
+  margin: 0;
+  box-sizing: border-box;
+}
+.MuiGrid-zeroMinWidth {
+  min-width: 0;
+}
+.MuiGrid-direction-xs-column {
+  flex-direction: column;
+}
+.MuiGrid-direction-xs-column-reverse {
+  flex-direction: column-reverse;
+}
+.MuiGrid-direction-xs-row-reverse {
+  flex-direction: row-reverse;
+}
+.MuiGrid-wrap-xs-nowrap {
+  flex-wrap: nowrap;
+}
+.MuiGrid-wrap-xs-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.MuiGrid-align-items-xs-center {
+  align-items: center;
+}
+.MuiGrid-align-items-xs-flex-start {
+  align-items: flex-start;
+}
+.MuiGrid-align-items-xs-flex-end {
+  align-items: flex-end;
+}
+.MuiGrid-align-items-xs-baseline {
+  align-items: baseline;
+}
+.MuiGrid-align-content-xs-center {
+  align-content: center;
+}
+.MuiGrid-align-content-xs-flex-start {
+  align-content: flex-start;
+}
+.MuiGrid-align-content-xs-flex-end {
+  align-content: flex-end;
+}
+.MuiGrid-align-content-xs-space-between {
+  align-content: space-between;
+}
+.MuiGrid-align-content-xs-space-around {
+  align-content: space-around;
+}
+.MuiGrid-justify-content-xs-center {
+  justify-content: center;
+}
+.MuiGrid-justify-content-xs-flex-end {
+  justify-content: flex-end;
+}
+.MuiGrid-justify-content-xs-space-between {
+  justify-content: space-between;
+}
+.MuiGrid-justify-content-xs-space-around {
+  justify-content: space-around;
+}
+.MuiGrid-justify-content-xs-space-evenly {
+  justify-content: space-evenly;
+}
+.MuiGrid-spacing-xs-1 {
+  width: calc(100% + 8px);
+  margin: -4px;
+}
+.MuiGrid-spacing-xs-1 > .MuiGrid-item {
+  padding: 4px;
+}
+.MuiGrid-spacing-xs-2 {
+  width: calc(100% + 16px);
+  margin: -8px;
+}
+.MuiGrid-spacing-xs-2 > .MuiGrid-item {
+  padding: 8px;
+}
+.MuiGrid-spacing-xs-3 {
+  width: calc(100% + 24px);
+  margin: -12px;
+}
+.MuiGrid-spacing-xs-3 > .MuiGrid-item {
+  padding: 12px;
+}
+.MuiGrid-spacing-xs-4 {
+  width: calc(100% + 32px);
+  margin: -16px;
+}
+.MuiGrid-spacing-xs-4 > .MuiGrid-item {
+  padding: 16px;
+}
+.MuiGrid-spacing-xs-5 {
+  width: calc(100% + 40px);
+  margin: -20px;
+}
+.MuiGrid-spacing-xs-5 > .MuiGrid-item {
+  padding: 20px;
+}
+.MuiGrid-spacing-xs-6 {
+  width: calc(100% + 48px);
+  margin: -24px;
+}
+.MuiGrid-spacing-xs-6 > .MuiGrid-item {
+  padding: 24px;
+}
+.MuiGrid-spacing-xs-7 {
+  width: calc(100% + 56px);
+  margin: -28px;
+}
+.MuiGrid-spacing-xs-7 > .MuiGrid-item {
+  padding: 28px;
+}
+.MuiGrid-spacing-xs-8 {
+  width: calc(100% + 64px);
+  margin: -32px;
+}
+.MuiGrid-spacing-xs-8 > .MuiGrid-item {
+  padding: 32px;
+}
+.MuiGrid-spacing-xs-9 {
+  width: calc(100% + 72px);
+  margin: -36px;
+}
+.MuiGrid-spacing-xs-9 > .MuiGrid-item {
+  padding: 36px;
+}
+.MuiGrid-spacing-xs-10 {
+  width: calc(100% + 80px);
+  margin: -40px;
+}
+.MuiGrid-spacing-xs-10 > .MuiGrid-item {
+  padding: 40px;
+}
+.MuiGrid-grid-xs-auto {
+  flex-grow: 0;
+  max-width: none;
+  flex-basis: auto;
+}
+.MuiGrid-grid-xs-true {
+  flex-grow: 1;
+  max-width: 100%;
+  flex-basis: 0;
+}
+.MuiGrid-grid-xs-1 {
+  flex-grow: 0;
+  max-width: 8.333333%;
+  flex-basis: 8.333333%;
+}
+.MuiGrid-grid-xs-2 {
+  flex-grow: 0;
+  max-width: 16.666667%;
+  flex-basis: 16.666667%;
+}
+.MuiGrid-grid-xs-3 {
+  flex-grow: 0;
+  max-width: 25%;
+  flex-basis: 25%;
+}
+.MuiGrid-grid-xs-4 {
+  flex-grow: 0;
+  max-width: 33.333333%;
+  flex-basis: 33.333333%;
+}
+.MuiGrid-grid-xs-5 {
+  flex-grow: 0;
+  max-width: 41.666667%;
+  flex-basis: 41.666667%;
+}
+.MuiGrid-grid-xs-6 {
+  flex-grow: 0;
+  max-width: 50%;
+  flex-basis: 50%;
+}
+.MuiGrid-grid-xs-7 {
+  flex-grow: 0;
+  max-width: 58.333333%;
+  flex-basis: 58.333333%;
+}
+.MuiGrid-grid-xs-8 {
+  flex-grow: 0;
+  max-width: 66.666667%;
+  flex-basis: 66.666667%;
+}
+.MuiGrid-grid-xs-9 {
+  flex-grow: 0;
+  max-width: 75%;
+  flex-basis: 75%;
+}
+.MuiGrid-grid-xs-10 {
+  flex-grow: 0;
+  max-width: 83.333333%;
+  flex-basis: 83.333333%;
+}
+.MuiGrid-grid-xs-11 {
+  flex-grow: 0;
+  max-width: 91.666667%;
+  flex-basis: 91.666667%;
+}
+.MuiGrid-grid-xs-12 {
+  flex-grow: 0;
+  max-width: 100%;
+  flex-basis: 100%;
+}
+@media (min-width:600px) {
+  .MuiGrid-grid-sm-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-sm-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-sm-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-sm-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-sm-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-sm-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-sm-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-sm-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-sm-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-sm-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-sm-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-sm-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-sm-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-sm-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:960px) {
+  .MuiGrid-grid-md-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-md-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-md-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-md-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-md-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-md-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-md-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-md-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-md-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-md-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-md-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-md-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-md-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-md-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:1280px) {
+  .MuiGrid-grid-lg-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-lg-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-lg-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-lg-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-lg-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-lg-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-lg-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-lg-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-lg-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-lg-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-lg-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-lg-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-lg-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-lg-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:1440px) {
+  .MuiGrid-grid-xl-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-xl-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-xl-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-xl-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-xl-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-xl-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-xl-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-xl-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-xl-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-xl-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-xl-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-xl-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-xl-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-xl-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+</style><style data-jss="" data-meta="MuiCssBaseline">
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+strong, b {
+  font-weight: 600;
+}
+body {
+  color: #404040;
+  margin: 0 0 1rem;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  background-color: #FFFFFF;
+}
+@media print {
+  body {
+    background-color: #fff;
+  }
+}
+body::backdrop {
+  background-color: #FFFFFF;
+}
+@font-face {
+  font-family: F1000ResearchFontIcons;
+  font-style: normal;
+  font-weight: normal;
+  src: local('F1000ResearchFontIcons'), local('F1000ResearchFontIcons'),
+		url(/assets/F1000ResearchFontIcons.eot) format('eot'),
+		url(/assets/F1000ResearchFontIcons.woff2) format('woff2'),
+		url(/assets/F1000ResearchFontIcons.woff) format('woff'),
+		url(/assets/F1000ResearchFontIcons.ttf) format('truetype'),
+		url(/assets/F1000ResearchFontIcons.svg) format('svg');
+}
+li a:focus, li a:active {
+  outline: 0;
+}
+ul {
+  border-radius: 2px;
+}
+sub, sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+</style><style data-jss="" data-meta="MuiBox">
+
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="loadingIconStyles">
+.jss13 {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.jss14 {
+  display: block;
+  background: transparent;
+  shape-rendering: auto;
+}
+.jss14 rect {
+  fill: #004494;
+}
+</style><style data-jss="" data-meta="MuiContainer">
+.MuiContainer-root {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width:600px) {
+  .MuiContainer-root {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.MuiContainer-disableGutters {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width:600px) {
+  .MuiContainer-fixed {
+    max-width: 600px;
+  }
+}
+@media (min-width:960px) {
+  .MuiContainer-fixed {
+    max-width: 960px;
+  }
+}
+@media (min-width:1280px) {
+  .MuiContainer-fixed {
+    max-width: 1280px;
+  }
+}
+@media (min-width:1440px) {
+  .MuiContainer-fixed {
+    max-width: 1440px;
+  }
+}
+@media (min-width:0px) {
+  .MuiContainer-maxWidthXs {
+    max-width: 444px;
+  }
+}
+@media (min-width:600px) {
+  .MuiContainer-maxWidthSm {
+    max-width: 600px;
+  }
+}
+@media (min-width:960px) {
+  .MuiContainer-maxWidthMd {
+    max-width: 960px;
+  }
+}
+@media (min-width:1280px) {
+  .MuiContainer-maxWidthLg {
+    max-width: 1280px;
+  }
+}
+@media (min-width:1440px) {
+  .MuiContainer-maxWidthXl {
+    max-width: 1440px;
+  }
+}
+</style><style data-jss="" data-meta="MuiAppBar">
+.MuiAppBar-root {
+  width: 100%;
+  display: flex;
+  z-index: 1100;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.MuiAppBar-positionFixed {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: fixed;
+}
+@media print {
+  .MuiAppBar-positionFixed {
+    position: absolute;
+  }
+}
+.MuiAppBar-positionAbsolute {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: absolute;
+}
+.MuiAppBar-positionSticky {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: sticky;
+}
+.MuiAppBar-positionStatic {
+  position: static;
+}
+.MuiAppBar-positionRelative {
+  position: relative;
+}
+.MuiAppBar-colorDefault {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #F5F5F5;
+}
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #004494;
+}
+.MuiAppBar-colorSecondary {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FFD617;
+}
+.MuiAppBar-colorInherit {
+  color: inherit;
+}
+.MuiAppBar-colorTransparent {
+  color: inherit;
+  background-color: transparent;
+}
+</style><style data-jss="" data-meta="submitButtonStyles">
+
+</style><style data-jss="" data-meta="submitButtonStyles">
+</style><style data-jss="" data-meta="MuiLink">
+.MuiLink-underlineNone {
+  text-decoration: none;
+}
+.MuiLink-underlineHover {
+  text-decoration: none;
+}
+.MuiLink-underlineHover:hover {
+  text-decoration: underline;
+}
+.MuiLink-underlineAlways {
+  text-decoration: underline;
+}
+.MuiLink-button {
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiLink-button::-moz-focus-inner {
+  border-style: none;
+}
+.MuiLink-button.Mui-focusVisible {
+  outline: auto;
+}
+</style><style data-jss="" data-meta="headerStyles">
+.jss4 {
+  top: 0;
+  color: #fff;
+  z-index: 1201;
+  position: sticky;
+  box-shadow: none;
+}
+.jss4 a {
+  text-decoration: none;
+}
+@media (min-width:960px) {
+  .jss4 {
+    position: relative;
+  }
+}
+.jss4--fixed {
+  position: fixed;
+}
+.jss4 a:hover {
+  text-decoration: none;
+}
+.jss5 {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
+  align-items: center;
+}
+.jss6 {
+  justify-content: flex-start;
+}
+.jss7 {
+  justify-content: center;
+}
+.jss8 {
+  justify-content: flex-end;
+}
+.jss9 {
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+.jss10 {
+  color: #fff;
+  font-size: 16px;
+  padding-top: 4px;
+  padding-left: 8px;
+}
+</style><style data-jss="" data-meta="navStyles">
+.jss28 {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 16px;
+}
+.jss28 ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 16px;
+}
+@media (min-width:960px) {
+  .jss28 ul {
+    margin: 0;
+    display: flex;
+  }
+  .jss28 ul li {
+    margin-right: 0;
+  }
+  .jss28 ul li:last-of-type {
+    margin-right: 0;
+  }
+}
+.jss28 ul ul {
+  margin: 0;
+  display: block;
+  padding: 8px 0px;
+}
+.jss28 ul ul li {
+  margin-right: 0;
+}
+.jss29 {
+  color: rgba(255, 255, 255, 0.87);
+  display: block;
+  position: relative;
+  transition: all 0.1s ease-out;
+  font-weight: 600;
+  padding-top: 16px;
+  will-change: color, border, background-color;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 14px;
+  text-transform: none;
+  transition-property: color, background-color, border;
+}
+@media (min-width:960px) {
+  .jss29 {
+    border-bottom: 2px solid transparent;
+  }
+}
+.jss29:hover {
+  color: #004494;
+  text-decoration: none;
+  background-color: #F2F5F9;
+  border-bottom-color: transparent;
+}
+.jss29.openMenuItem {
+  color: #004494;
+  background-color: #F2F5F9;
+  border-bottom-color: transparent;
+}
+.jss29.active {
+  color: #fff;
+  background-color: #003776;
+  border-bottom-color: transparent;
+}
+</style><style data-jss="" data-meta="subMenuStyles">
+.jss40 {
+  position: relative;
+  padding-right: 28px;
+}
+.jss40 svg {
+  top: 50%;
+  right: 5px;
+  position: absolute;
+  transform: translateY(-50%);
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+@media (min-width:960px) {
+  .jss40:hover svg {
+    transform: rotate(180deg) translateY(50%);
+  }
+}
+.jss40.openMenuItem svg {
+  transform: rotate(180deg) translateY(50%);
+}
+</style><style data-jss="" data-meta="dropDownStyles">
+.jss41 {
+  min-width: 166px;
+}
+@media (min-width:960px) {
+  .jss41 {
+    left: -16px;
+    bottom: 0;
+    display: block;
+    position: absolute;
+    transform: translateY(100%);
+  }
+}
+.jss42 {
+  margin-top: 0;
+}
+.jss43 {
+  color: #004494;
+  width: auto;
+  background: #F2F5F9;
+  white-space: nowrap;
+}
+@media (max-width:959.95px) {
+  .jss43 {
+    white-space: normal;
+  }
+}
+.jss44 {
+  display: block;
+  padding: 8px 16px;
+}
+.jss44:hover {
+  color: #004494;
+  text-decoration: underline!important;
+  background-color: transparent;
+}
+.jss44.active {
+  color: #004494;
+  background-color: transparent;
+}
+</style><style data-jss="" data-meta="logoTextStyles">
+.jss11 {
+  font-size: 1.5rem;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.jss11:hover {
+  color: #fff;
+}
+.jss12 {
+  color: #fff;
+}
+.jss12:hover {
+  color: #fff;
+}
+</style><style data-jss="" data-meta="searchFieldStyles">
+.jss21 {
+  width: 100%;
+  border: none;
+  margin: 0;
+  position: relative;
+  background-color: #fff;
+}
+.jss21--focussed {
+  color: #404040;
+  border-color: transparent;
+  background-color: #fff;
+}
+@media (min-width:960px) {
+  .jss21 {
+    width: auto;
+  }
+}
+@media (max-width:959.95px) {
+  .jss21 {
+    margin-top: 16px;
+  }
+}
+.jss21--focussed:hover {
+  background-color: #fff;
+}
+.jss22 {
+  top: 0;
+  color: #9F9F9F;
+  height: 100%;
+  display: flex;
+  padding: 0px 16px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+.jss22--focussed {
+  color: #004494;
+}
+.jss23 {
+  left: 0;
+  pointer-events: none;
+}
+.jss24 {
+  right: 0;
+  cursor: pointer;
+}
+.jss25.MuiInputBase-root {
+  color: #404040;
+  width: 100%;
+  margin-bottom: 0;
+}
+.jss25 .MuiInputBase-input {
+  width: 100%;
+  padding: 8px 8px 8px 0px;
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  padding-left: calc(1em + 32px);
+  padding-right: calc(1em + 32px);
+}
+.jss25--gateway .MuiInputBase-input {
+  height: 1.625rem;
+}
+</style><style data-jss="" data-meta="MuiInputBase">
+@-webkit-keyframes mui-auto-fill {}
+@-webkit-keyframes mui-auto-fill-cancel {}
+.MuiInputBase-root {
+  color: #404040;
+  cursor: text;
+  margin: 0 0 1rem;
+  display: inline-flex;
+  position: relative;
+  font-size: 16px;
+  box-sizing: border-box;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.1876em;
+  letter-spacing: 0;
+}
+.MuiInputBase-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.38);
+  cursor: default;
+}
+.MuiInputBase-multiline {
+  padding: 6px 0 7px;
+}
+.MuiInputBase-multiline.MuiInputBase-marginDense {
+  padding-top: 3px;
+}
+.MuiInputBase-fullWidth {
+  width: 100%;
+}
+.MuiInputBase-input {
+  font: inherit;
+  color: currentColor;
+  width: 100%;
+  border: 0;
+  height: 1.1876em;
+  margin: 0;
+  display: block;
+  padding: 6px 0 7px;
+  min-width: 0;
+  background: none;
+  box-sizing: content-box;
+  animation-name: mui-auto-fill-cancel;
+  letter-spacing: inherit;
+  animation-duration: 10ms;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiInputBase-input::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input::-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input:focus {
+  outline: 0;
+}
+.MuiInputBase-input:invalid {
+  box-shadow: none;
+}
+.MuiInputBase-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.MuiInputBase-input.Mui-disabled {
+  opacity: 1;
+}
+.MuiInputBase-input:-webkit-autofill {
+  animation-name: mui-auto-fill;
+  animation-duration: 5000s;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-webkit-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-moz-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:-ms-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-ms-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-webkit-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-moz-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus:-ms-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-ms-input-placeholder {
+  opacity: 0.42;
+}
+.MuiInputBase-inputMarginDense {
+  padding-top: 3px;
+}
+.MuiInputBase-inputMultiline {
+  height: auto;
+  resize: none;
+  padding: 0;
+}
+.MuiInputBase-inputTypeSearch {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+</style><style data-jss="" data-meta="footerStylesORE">
+.jss16 {
+  color: #fff;
+  position: relative;
+  margin-top: 104px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-color: #004494;
+}
+.jss16 h4 {
+  margin-bottom: 8px;
+}
+.jss16 a {
+  color: #fff;
+}
+.jss16 li:first-child {
+  padding-top: 0;
+}
+.jss16 li a {
+  font-size: 14px;
+}
+.jss16 li svg {
+  transform: scale(0.75);
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.jss17 {
+  color: #BFD0E4;
+}
+.jss18 {
+  border: none;
+  height: 1px;
+  margin-bottom: 8px;
+  background-color: #7FA1C9;
+}
+@media (min-width:960px) {
+  .jss18 {
+    height: 2px;
+  }
+}
+.jss19 .MuiGrid-item:first-child {
+  padding-bottom: 16px;
+}
+@media (min-width:960px) {
+  .jss19 .MuiGrid-item:first-child {
+    padding-bottom: 4px;
+  }
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss31 {
+  color: #404040;
+  right: 24px;
+  width: 321px;
+  bottom: 100%;
+  z-index: 49;
+  position: absolute;
+  box-shadow: 0 -2px 2px 0 rgba(0,0,0,.1);
+}
+.jss31--fixed {
+  bottom: 0;
+  position: fixed;
+}
+.jss31--show {
+  z-index: 52;
+}
+.jss32 {
+  color: #404040;
+  cursor: pointer;
+  display: flex;
+  padding: 10px 16px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFD617;
+}
+.jss33 {
+  color: #404040;
+  margin: 0;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.jss34 {
+  display: flex;
+  padding: 16px;
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #fff;
+}
+</style><style data-jss="" data-meta="listStyles">
+.jss38 {
+  font-size: 16px;
+}
+</style><style data-jss="" data-meta="MuiDialog">
+@media print {
+  .MuiDialog-root {
+    position: absolute !important;
+  }
+}
+.MuiDialog-scrollPaper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MuiDialog-scrollBody {
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+.MuiDialog-scrollBody:after {
+  width: 0;
+  height: 100%;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+}
+.MuiDialog-container {
+  height: 100%;
+  outline: 0;
+}
+@media print {
+  .MuiDialog-container {
+    height: auto;
+  }
+}
+.MuiDialog-paper {
+  margin: 32px;
+  position: relative;
+  overflow-y: auto;
+}
+@media print {
+  .MuiDialog-paper {
+    box-shadow: none;
+    overflow-y: visible;
+  }
+}
+.MuiDialog-paperScrollPaper {
+  display: flex;
+  max-height: calc(100% - 64px);
+  flex-direction: column;
+}
+.MuiDialog-paperScrollBody {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.MuiDialog-paperWidthFalse {
+  max-width: calc(100% - 64px);
+}
+.MuiDialog-paperWidthXs {
+  max-width: 444px;
+}
+@media (max-width:507.95px) {
+  .MuiDialog-paperWidthXs.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthSm {
+  max-width: 600px;
+}
+@media (max-width:663.95px) {
+  .MuiDialog-paperWidthSm.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthMd {
+  max-width: 960px;
+}
+@media (max-width:1023.95px) {
+  .MuiDialog-paperWidthMd.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthLg {
+  max-width: 1280px;
+}
+@media (max-width:1343.95px) {
+  .MuiDialog-paperWidthLg.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthXl {
+  max-width: 1440px;
+}
+@media (max-width:1503.95px) {
+  .MuiDialog-paperWidthXl.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperFullWidth {
+  width: calc(100% - 64px);
+}
+.MuiDialog-paperFullScreen {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+  max-height: none;
+  border-radius: 0;
+}
+.MuiDialog-paperFullScreen.MuiDialog-paperScrollBody {
+  margin: 0;
+  max-width: 100%;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss82 {
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+</style><link rel="stylesheet" type="text/css" id="ec-preset-website-print-css" href="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.36.0/ec-preset-website/styles/ecl-ec-preset-website-print.css" media="print" integrity="sha256-y8ShMuXlzM/cq3MULwBoGFKcsoRCsNUjiYBRvC5/Cf0= sha384-SfngKqyvQJs4vTV7vOE8mGbg+APerTuHUKJAO84HPMJhkgNqjKQPBdzdaKy2lClk sha512-onhCqT7OPctDjXjYYb1+chEoi+sjvEdlYxKAImBQeG5qsZwgcxQmKJEEhWRMaxkJAXAhM3hvj0wlDUyBbqKxLg==" crossorigin="anonymous"><link charset="utf-8" rel="preload" as="script" href="/vendors.782.f6312de78a56600b95ce.js"><link charset="utf-8" rel="preload" as="script" href="/vendors.81.8573c338233e632fb4bd.js"><link charset="utf-8" rel="preload" as="script" href="/lazy.metrics-cumulative-views-chart.0ab634323a13e779786e.js"><link rel="stylesheet" type="text/css" id="ec-preset-website-css" href="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.36.0/ec-preset-website/styles/ecl-ec-preset-website.css" media="screen" integrity="sha256-BGtK+zt5ChIZXgUbdKXu57Jsr0lYo/TsL6L6f0wxXLU= sha384-i38PiDjzLJYd5FPHvDAKLHZy0xPJTLsTDPFb4mZraYCaSTSvEZYM2dAfNYh6nPny sha512-KqbYg16USaHs6sGcYRqhVhpfRpkFX3WU7T/5FHjDkw1grSEpoZpdC83aAnhqisOzmpKMvNBWWm0EWHIF/iIt/A==" crossorigin="anonymous"><title>Open Research Europe | Open Access Publishing Platform</title><link rel="shortcut-icon" href="/assets/favicons/ore/favicon.ico" data-react-helmet="true"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/ore/favicon-16x16.png" data-react-helmet="true"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/ore/favicon-32x32.png" data-react-helmet="true"><link rel="icon" type="image/png" sizes="48x48" href="/assets/favicons/ore/favicon-48x48.png" data-react-helmet="true"><link rel="manifest" href="/assets/favicons/ore/manifest.json" data-react-helmet="true"><link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/ore/apple-touch-icon-57x57.png" data-react-helmet="true"><link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/ore/apple-touch-icon-60x60.png" data-react-helmet="true"><link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/ore/apple-touch-icon-72x72.png" data-react-helmet="true"><link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/ore/apple-touch-icon-76x76.png" data-react-helmet="true"><link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/ore/apple-touch-icon-114x114.png" data-react-helmet="true"><link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/ore/apple-touch-icon-120x120.png" data-react-helmet="true"><link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/ore/apple-touch-icon-144x144.png" data-react-helmet="true"><link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/ore/apple-touch-icon-152x152.png" data-react-helmet="true"><link rel="apple-touch-icon" sizes="167x167" href="/assets/favicons/ore/apple-touch-icon-167x167.png" data-react-helmet="true"><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/ore/apple-touch-icon-180x180.png" data-react-helmet="true"><link rel="apple-touch-icon" sizes="1024x1024" href="/assets/favicons/ore/apple-touch-icon-1024x1024.png" data-react-helmet="true"><meta charset="UTF-8" data-react-helmet="true"><meta name="viewport" content="width=device-width, initial-scale=1.0" data-react-helmet="true"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" data-react-helmet="true"><meta http-equiv="X-UA-Compatible" content="IE=edge" data-react-helmet="true"><meta name="twitter:card" content="summary" data-react-helmet="true"><meta name="twitter:site" content="OpenResearch_EU" data-react-helmet="true"><meta name="twitter:title" content="Open Research Europe | Open Access Publishing Platform" data-react-helmet="true"><meta property="og:title" content="Open Research Europe | Open Access Publishing Platform" data-react-helmet="true"><meta property="og:url" content="https://open-research-europe.ec.europa.eu/articles/5-28" data-react-helmet="true"><meta property="og:site_name" content="Open Research Europe | Open Access Publishing Platform" data-react-helmet="true"><meta name="theme-color" content="#004494" data-react-helmet="true"><meta name="application-name" content="Open Research Europe" data-react-helmet="true"><link rel="prefetch" as="script" href="/vendors.172.222238859d0c7583f61e.js"><link rel="prefetch" as="script" href="/lazy.metrics-views-map.5248ac619c8380594f91.js"><link type="text/css" rel="stylesheet" media="all" href="https://webtools.europa.eu/css/webtools.theme-ec.css?t=1738583078"><script async="" src="https://my.hellobar.com/modules-v2.js"></script><link type="text/css" rel="stylesheet" media="all" href="https://webtools.europa.eu/css/webtools.icons.default.css?t=1738583078"></head><body style="margin-bottom: 0px;"><div class="globan globan-dropdown-collapsed dark logo-flag" id="globan" data-nosnippet="true" style="z-index: 40;"><div class="globan-center wt-noconflict"><div class="globan-content wt-noconflict"><span class="wt-noconflict">An official website of the European Union</span><span class="wt-noconflict">An official EU website</span><button aria-controls="globan-dropdown-qqep1a8g4" aria-expanded="false" class="wt-noconflict">How do you know?</button></div><div id="globan-dropdown-qqep1a8g4" class="globan-dropdown wt-noconflict" hidden=""><p class="wt-paragraph">All official European Union website addresses are in the <b class="wt-noconflict">europa.eu</b> domain.</p><p class="wt-paragraph"><a class="wt-link" href="https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies_en">See all EU institutions and bodies</a></p></div></div><style class="wt-noconflict">#globan{background-color:#eee;padding:0 0 0 16px;position:relative;line-height:inherit;min-height:28px}#globan,#globan *,#globan *:after,#globan *:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}#globan:after{content:""!important;display:block;clear:both}#globan *{font-size:14px;font-family:Arial,Verdana;-webkit-box-sizing:border-box;box-sizing:border-box}#globan [hidden]{display:none}#globan .globan-center{display:inline-block;position:relative}#globan .globan-content{min-height:25px;line-height:25px}#globan .globan-content button{text-decoration:none;color:#444;background-color:#eee;font-weight:400;margin:0 0 0 6px;padding:0 7px;position:relative;display:inline-block;height:28px;min-height:28px;cursor:pointer;border:3px solid #fff0}#globan .globan-content button:hover,#globan .globan-content button:focus,#globan .globan-content button:active,#globan.dark .globan-content button:hover,#globan.dark .globan-content button:focus,#globan.dark .globan-content button:active,#globan .globan-content button[aria-expanded="true"],#globan.dark .globan-content button[aria-expanded="true"]{background-color:#fff;color:#004494;outline:none}#globan .globan-content button:focus,#globan .globan-content button:active,#globan.dark .globan-content button:focus,#globan.dark .globan-content button:active{border-color:#ffd617;outline:none}#globan .globan-content button:hover:after,#globan .globan-content button:focus:after,#globan .globan-content button:active:after,#globan.dark .globan-content button:hover:after,#globan.dark .globan-content button:focus:after,#globan.dark .globan-content button:active:after,#globan .globan-content button[aria-expanded="true"]:after,#globan.dark .globan-content button[aria-expanded="true"]:after{background:center center / 12px auto no-repeat #fff0 url(https://webtools.europa.eu/images/chevron-blue.svg?t=1738583078)}#globan.dark,#globan.dark button{background-color:#404040}#globan.dark .globan-content,#globan.dark .globan-content button{color:#fff}#globan .globan-content button:after{content:" "!important;display:inline-block;width:20px;height:8px;-webkit-transition:all .3s;-moz-transition:all .3s;-o-transition:all .3s;-ms-transition:all .3s;transition:all .3s;margin-left:2px;background:center center / 12px auto no-repeat #fff0 url(https://webtools.europa.eu/images/chevron-grey.svg?t=1738583078)}#globan.dark .globan-content button:after{background:center center / 12px auto no-repeat #fff0 url(https://webtools.europa.eu/images/chevron-white.svg?t=1738583078)}#globan .globan-content button[aria-expanded="true"]:after{transform:rotate(-180deg)}#globan.logo-flag .globan-content:before{content:" "!important;display:inline-block;width:24px;height:16px;background:center center / 110% auto no-repeat #004494 url(https://webtools.europa.eu/images/flag.svg?t=1738583078);float:left;margin:5.5px 8px 0 0;border:1px solid #004494}#globan.dark.logo-flag .globan-content:before{border-color:#7f99cc}#globan span{display:none}#globan span:first-child{display:inline-block}#globan .globan-dropdown{background-color:#fff;position:absolute;right:0;top:100%;padding:12px 16px;margin:0;max-width:500px;border:1px solid #ccc;box-shadow:0 4px 5px 0 rgb(0 0 0 / .4);-webkit-box-shadow:0 4px 5px 0 rgb(0 0 0 / .4);-moz-box-shadow:0 4px 5px 0 rgb(0 0 0 / .4);color:#444}#globan .globan-dropdown p{padding:0;margin:0;line-height:1.4}#globan .globan-dropdown p:nth-child(2){margin-top:10px}#globan .globan-dropdown a{color:#004494;text-decoration:none}#globan .globan-dropdown a:hover{text-decoration:underline}#globan.reverse .globan-center{float:right;padding-right:10px}#globan.reverse.logo-flag .globan-content:before{float:right;margin:2px 0 0 10px}#globan.reverse .globan-content{text-align:right}#globan.reverse .globan-content a,#globan.reverse .globan-content a:hover,#globan.reverse .globan-content a:focus,#globan.reverse .globan-content a:active{float:left;margin:0 20px 0 0}#globan.reverse .globan-content a:after{float:left;margin:0 10px 0 0}#globan.reverse .globan-dropdown{left:0;right:auto;direction:rtl}#globan.fixed{position:fixed;left:0;top:0;right:0}.globan-invalid-domain{background-color:#ffd617;color:#444;text-align:center;padding:5px 16px;display:block;margin-left:-16px;font-size:14px;font-family:Arial,Verdana}@media (max-width:820px){#globan{padding-left:5px}#globan .globan-center{display:block}#globan.reverse .globan-center{float:none}#globan span:first-child{display:none}#globan span:nth-child(2){display:inline-block;border-top:3px solid #fff0}#globan .globan-content a{float:right}}@media (max-width:600px){#globan .globan-content a,#globan .globan-content a:hover,#globan .globan-content a:focus,#globan .globan-content a:active{display:inline-block;width:30px;padding:0;position:relative;white-space:nowrap;float:right;text-indent:40px;overflow:hidden}#globan .globan-content a:after{position:absolute;left:-3px;top:0;margin:0;width:30px}}@media print{#globan{display:none}}@media all{#globan .globan-invalid-domain{background-color:#ffd617;color:#444;text-align:center;padding:5px 16px;display:block;margin-left:-16px}}</style></div><div data-nosnippet="true" class="cck-banner" id="cookie-consent-banner" role="region" aria-label="Cookies policy"><div class="cck-container wt-noconflict">  <div class="cck-wrapper wt-noconflict">    <div class="cck-content wt-noconflict">      <div aria-hidden="true" class="cck-content-icon wt-noconflict">         <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false" xmlns="xmlns=&quot;http://www.w3.org/2000/svg" class="wt-icon--l wt-icon--primary" width="48" height="48" fill="currentColor"><path fill-rule="evenodd" d="M42 3H6C4.35 3 3 4.35 3 6v36c0 1.65 1.35 3 3 3h36c1.65 0 3-1.35 3-3V6c0-1.65-1.35-3-3-3M21.93 13.38a2.31 2.31 0 0 1 2.1-1.41c.6 0 1.17.24 1.59.66s.66.99.66 1.59c0 .45-.12.87-.39 1.26-.24.36-.6.66-1.02.84s-.87.21-1.29.12c-.45-.09-.84-.3-1.14-.63-.3-.3-.54-.72-.63-1.14s-.03-.9.12-1.29M30 36H18v-3h4.5v-9h-3v-3h6v12H30z" clip-rule="evenodd"></path></svg>      </div>      <div class="cck-content-content wt-noconflict"><p class="wt-noconflict">This site uses cookies. Visit our <a href="https://commission.europa.eu/cookies-policy_en" target="_self" class="wt-ecl-link">cookies policy page</a> or click the link in any footer for more information and to change your preferences.</p></div>    </div>    <div class="cck-actions wt-noconflict">      <a href="#accept" class="wt-ecl-button wt-ecl-button--primary cck-actions-button">Accept all cookies</a>      <a href="#refuse" class="wt-ecl-button wt-ecl-button--primary cck-actions-button ea_ignore">Accept only essential cookies</a>    </div>  </div></div><style class="wt-noconflict">@media print{.cck-container{display:none}}body .cck-container{font-family:Arial,sans-serif;background-color:#ebebeb;line-height:30px;font-size:16px;padding:24px;position:fixed;z-index:100;bottom:0;right:0;left:0;color:#444}.cck-container a:not(.wt-ecl-button){color:#004494;text-decoration:underline}.cck-container .cck-wrapper{display:flex}.cck-container .cck-wrapper .cck-content{display:flex;margin-right:1.5rem;flex-grow:2}.cck-container .cck-wrapper .cck-content p{margin:0}.cck-container .cck-wrapper .cck-content .cck-content-icon{margin-right:1.5rem}.cck-container .cck-wrapper .cck-actions a{white-space:nowrap}.cck-container .cck-wrapper .cck-actions a.cck-actions-button{margin-top:1.5rem}.cck-container .cck-wrapper .cck-actions a svg{margin-left:.75rem}@media only screen and (min-width:1199px){.cck-container{padding:1.5rem 0}.cck-container .cck-wrapper{margin:0 auto;max-width:1170px;display:flex}}.cck-container .cck-wrapper{flex-direction:column}.cck-container .cck-wrapper .cck-actions{display:flex;align-items:flex-start;justify-content:flex-end;flex-wrap:wrap}.cck-container .cck-wrapper .cck-actions a:last-child{margin-left:.5rem}.cck-container .cck-wrapper .cck-actions a.ea_close{display:flex;align-items:center;margin-left:-.4rem}@media only screen and (min-width:768px){.cck-container .cck-wrapper{flex-direction:row}.cck-container .cck-wrapper .cck-actions{flex-wrap:nowrap}.cck-container .cck-wrapper .cck-actions a.cck-actions-button{margin-top:0}}</style></div><div id="MathJax_Message" style="display: none;"></div><div id="app"><div class="MuiContainer-root MuiContainer-maxWidthXl"><script type="application/json" data-process="true">{ "utility": "cck" }</script><div class="analytics wt wt-analytics "></div><script type="application/json" data-process="true">{ "utility": "analytics", "siteID": "d58da3b4-052e-4210-8e27-0846e9398624", "sitePath": ["open-research-europe.ec.europa.eu"], "instance": "ec", "mode": "manual" }</script><div class="ecl-site-header-harmonised__container"><div class="ecl-site-header-harmonised__top"><a class="ecl-link ecl-link--standalone ecl-site-header-harmonised__logo-link" href="https://ec.europa.eu/info/index_en" aria-label="European Commission"><img alt="European Commission logo" title="European Commission" class="ecl-site-header-harmonised__logo-image" src="/assets/logo--en.svg"></a><div class="ecl-site-header-harmonised__action"><div class="ecl-site-header-harmonised__search-container"><a class="ecl-link ecl-link--standalone ecl-site-header-harmonised__search-toggle" href="/" data-ecl-search-toggle="true" aria-controls="search-form-id" aria-expanded="false"><svg focusable="false" aria-hidden="true" class="ecl-icon ecl-icon--s"><use xlink:href="/assets/ore-icons.svg#general--search"></use></svg>Search</a><form action="https://ec.europa.eu/search" data-ecl-search-form="true" class="ecl-search-form ecl-site-header-harmonised__search" id="ec_search_form" method="get"><label class="ecl-search-form__label ecl-form-label" for="search-input-id">Search</label><input placeholder="Search" type="search" class="ecl-search-form__text-input ecl-text-input" id="global-search" name="QueryText"><button class="ecl-button ecl-button--search ecl-search-form__button" type="submit">Search</button></form></div></div></div></div></div><div class="ecl-site-header-harmonised__banner-top"><div class="MuiContainer-root MuiContainer-maxWidthXl"><a href="https://ec.europa.eu/info/research-and-innovation_en" class="ecl-link ecl-link--standalone" aria-label="">Research and Innovation</a></div></div><header class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary jss4 MuiPaper-elevation4"><div class="MuiContainer-root MuiContainer-maxWidthXl"><div class="MuiGrid-root jss9 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-content-xs-space-between"><div class="MuiGrid-root jss5 jss6 MuiGrid-item"><div><p class="MuiTypography-root jss11 MuiTypography-body1"><a aria-current="page" class="MuiTypography-root MuiLink-root MuiLink-underlineAlways jss12 MuiTypography-colorPrimary active" href="/">Open Research Europe</a></p></div></div><div class="MuiGrid-root jss5 jss7 MuiGrid-item"><form class="jss21"><div class="jss22 jss23"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></div><label class="MuiTypography-root MuiTypography-srOnly" for="siteSearch">Search</label><div class="MuiInputBase-root jss25" style="margin: 0px;"><input id="siteSearch" placeholder="Search" type="text" aria-label="Search" class="MuiInputBase-input" value=""></div></form></div><div class="MuiGrid-root jss5 jss8 MuiGrid-item"><button class="MuiButtonBase-root MuiButton-root MuiButton-text jss26 jss27 " tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeMedium"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v2h14V4H5zm0 10h4v6h6v-6h4l-7-7-7 7z"></path></svg></span>Submit your Research</span></button></div></div><div class="MuiGrid-root MuiGrid-container MuiGrid-justify-content-xs-space-between"><div class="MuiGrid-root MuiGrid-item"><nav class="jss28" aria-label="Open Research Europe"><ul role="menubar"><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss29 MuiTypography-colorInherit" role="menuitem" tabindex="0" href="/browse/articles">Browse</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss29 MuiTypography-colorInherit" role="menuitem" tabindex="0" href="/gateways">Gateways &amp; Collections</a></li><li role="none" style="position: relative;"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways jss29 jss40 MuiTypography-colorInherit" role="menuitem" aria-haspopup="true" aria-expanded="false" href="#" tabindex="0">How to Publish <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></a><div class="MuiBox-root jss75 jss41" role="none" style="opacity: 0; visibility: hidden;"><div class="MuiBox-root jss76 jss42" role="none"><ul role="menu" aria-label="How to Publish" class="jss43"><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-authors/publish-your-research/">Submit your Research</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-authors/my-submissions/">My Submissions</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-authors/article-guidelines/">Article Guidelines</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-authors/article-guidelines-new-versions/">Article Guidelines (New Versions)</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-authors/data-guidelines/">Open Data, Software and Code Guidelines</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-authors/data-guidelines-hss/">Open Data and Accessible Source Materials Guidelines for Humanities and Social Sciences</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-authors/open-data-software-and-code-guidelines-pse/">Open Data, Software and Code Guidelines for Physical Sciences and Engineering</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-authors/prepublication-checks/">Prepublication Checks</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-authors/production/">Production Process</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-authors/article-processing-charges/">Article Processing Charges</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-authors/tips-for-finding-referees/">Finding Article Reviewers</a></li></ul></div></div></li><li role="none" style="position: relative;"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways jss29 jss40 MuiTypography-colorInherit" role="menuitem" aria-haspopup="true" aria-expanded="false" href="#" tabindex="0">About <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></a><div class="MuiBox-root jss77 jss41" role="none" style="opacity: 0; visibility: hidden;"><div class="MuiBox-root jss78 jss42" role="none"><ul role="menu" aria-label="About" class="jss43"><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/how-it-works/">How it Works</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/eligibility/">Eligibility</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/indexation/">Indexation</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/peer-review/">Peer Review</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-referees/guidelines/">Reviewer Guidelines</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/for-referees/incentives/">Reviewer Benefits</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/advisors/">Advisory Board</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/community-gateway-advisors/">Community Gateway Advisors</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/librarian-advisory-group/">Librarian Advisory Group</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/policies/">Policies</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/glossary/">Glossary</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/faqs/">FAQs</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/developers/">For Developers</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/about/contact/">Contact</a></li></ul></div></div></li><li role="none" style="position: relative;"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways jss29 jss40 MuiTypography-colorInherit" role="menuitem" aria-haspopup="true" aria-expanded="false" href="#" tabindex="0">Resource Hub <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></a><div class="MuiBox-root jss79 jss41" role="none" style="opacity: 0; visibility: hidden;"><div class="MuiBox-root jss80 jss42" role="none"><ul role="menu" aria-label="Resource Hub" class="jss43"><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/resource-hub/an-introduction-to-open-research/">An introduction to open research</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/resource-hub/publishing-with-open-research-europe/">Publishing with Open Research Europe</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/open-research-for-humanities-and-social-sciences/">Open research for Humanities and Social Sciences</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/resource-hub/understanding-open-data/">Understanding open data</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/resource-hub/open-peer-review/">Open peer review</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/resource-hub/early-career-researchers/">Early Career Researchers</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/software-tools/">Software Tool Articles</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/resource-hub/data-notes/">Data Notes</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/resource-hub/registered-reports/">Registered Reports</a></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss44 MuiTypography-colorInherit" role="menuitem" tabindex="-1" href="/resource-hub/method-articles/">Method Articles</a></li></ul></div></div></li><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss29 MuiTypography-colorInherit" role="menuitem" tabindex="0" href="/blog">Blog</a></li></ul></nav></div><div class="MuiGrid-root MuiGrid-item"><nav class="jss28" aria-label="Account functions"><ul role="menubar"><li role="none"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover jss29 MuiTypography-colorInherit" role="menuitem" tabindex="0" href="/login">Sign in</a></li></ul></nav></div></div></div></header><main style="min-height: calc(-559px + 100vh);"><div class="MuiContainer-root MuiContainer-maxWidthXl"><div class="MuiGrid-root MuiGrid-container"><div class="MuiBox-root jss81 jss13"><svg class="jss14" xmlns="http://www.w3.org/2000/svg" width="150px" height="150px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><title>Loading</title><g transform="rotate(0 50 50)"><rect x="44.5" y="11.5" rx="4.2" ry="4.2" width="11" height="15"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.8888888888888888s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(40 50 50)"><rect x="44.5" y="11.5" rx="4.2" ry="4.2" width="11" height="15"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.7777777777777778s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(80 50 50)"><rect x="44.5" y="11.5" rx="4.2" ry="4.2" width="11" height="15"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.6666666666666666s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(120 50 50)"><rect x="44.5" y="11.5" rx="4.2" ry="4.2" width="11" height="15"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5555555555555556s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(160 50 50)"><rect x="44.5" y="11.5" rx="4.2" ry="4.2" width="11" height="15"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.4444444444444444s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(200 50 50)"><rect x="44.5" y="11.5" rx="4.2" ry="4.2" width="11" height="15"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.3333333333333333s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(240 50 50)"><rect x="44.5" y="11.5" rx="4.2" ry="4.2" width="11" height="15"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.2222222222222222s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(280 50 50)"><rect x="44.5" y="11.5" rx="4.2" ry="4.2" width="11" height="15"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.1111111111111111s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(320 50 50)"><rect x="44.5" y="11.5" rx="4.2" ry="4.2" width="11" height="15"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animate></rect></g></svg><span class="MuiTypography-root MuiTypography-srOnly">Loading</span></div></div></div></main><footer class="MuiBox-root jss30 jss16"><div class="MuiBox-root jss35 jss31"><div class="MuiBox-root jss36 jss32"><span class="MuiTypography-root jss33 MuiTypography-body1">Stay informed</span><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg></div></div><div class="MuiContainer-root MuiContainer-maxWidthXl"><div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4"><div class="MuiBox-root jss37"><span class="MuiTypography-root MuiTypography-h4">Open Research Europe</span></div><span class="MuiTypography-root jss17 MuiTypography-body2">This site is managed by the Directorate-General for DG RTD<br>ISSN: 2732-5121</span></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4"><span class="MuiTypography-root MuiTypography-h4">Contact us</span><hr class="MuiDivider-root jss18"><ul class="MuiList-root jss38"><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="/contact">Contact Open Research Europe</a></li><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="/about">How it works</a></li><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="/published/rss">RSS</a></li></ul></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4"><span class="MuiTypography-root MuiTypography-h4">About us</span><hr class="MuiDivider-root jss18"><ul class="MuiList-root jss38"><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="/legal/privacypolicy">Privacy policy</a></li><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="/legal">Legal notice</a></li></ul></div></div><div class="MuiBox-root jss39"><hr class="MuiDivider-root jss18"></div><div class="MuiGrid-root jss19 MuiGrid-container MuiGrid-spacing-xs-3"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-h4 MuiTypography-colorPrimary" href="https://ec.europa.eu/info/index_en" target="_blank" rel="noopener noreferrer">European Commission</a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4"><ul class="MuiList-root jss38"><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="https://ec.europa.eu/info/about-european-commission/contact_en" target="_blank" rel="noopener noreferrer">Contact the European Commission</a></li><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="https://europa.eu/european-union/contact/social-networks_en" target="_blank" rel="noopener noreferrer">Follow the European Commission on social media<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></li><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="https://ec.europa.eu/info/resources-partners_en" target="_blank" rel="noopener noreferrer">Resources for partners</a></li></ul></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4"><ul class="MuiList-root jss38"><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="https://ec.europa.eu/info/language-policy_en" target="_blank" rel="noopener noreferrer">Language policy</a></li><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="https://ec.europa.eu/info/cookies_en" target="_blank" rel="noopener noreferrer">Cookies</a></li><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="https://ec.europa.eu/info/privacy-policy_en" target="_blank" rel="noopener noreferrer">Privacy policy</a></li><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="https://ec.europa.eu/info/legal-notice_en" target="_blank" rel="noopener noreferrer">Legal notice</a></li><li class="MuiListItem-root"><a class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary" href="https://ec.europa.eu/info/brexit-content-disclaimer_en" target="_blank" rel="noopener noreferrer">Brexit content disclaimer</a></li></ul></div></div></div></footer></div><script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script id="europa-webtools-js" src="https://europa.eu/webtools/load.js?globan=1110" defer=""></script><script id="ec-preset-website-js" src="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.36.0/ec-preset-website/scripts/ecl-ec-preset-website.js" integrity="sha256-R8N+VBqopN53BNr8sMgmEVoI0G7r2hZYkEJjaLwmXDI= sha384-bh5JrVMOiDx7DvHit0KcTjZ4hq4D+PC8tZjoJNCvc529rikJQqJJUM9BRm0NVI/q sha512-Cg7gWRpGf291Jvh0lyjbLNcIElLjBnkxMm7z4G4Ux+xXyIvK3jOIHJpBaoyFLdTpdS4ej1loKpVKOZbzXJJVCA==" crossorigin="anonymous"></script><script id="helloBar" src="https://my.hellobar.com/ceeb38873b3fedd1a79b30ed2a2b2909a555e723.js" async=""></script><script type="text/javascript" src="https://webtools.europa.eu/js/webtools.cck.js?t=1738583078"></script><script type="text/javascript" src="https://webanalytics.europa.eu/ppms.js?t=1738583078"></script></body></html>

@@ -19,9 +19,9 @@ ollama run hc.co/<user>/<model_id>:<quant>
   - <https://huggingface.co/bartowski/gemma-2-27b-it-GGUF>
 - Phi-4 (14b)
   - <https://huggingface.co/unsloth/phi-4-GGUF>
-- DeepSeek-R1 (32B/14B/7B/1.5B)
-  - <https://huggingface.co/collections/unsloth/deepseek-r1-all-versions-678e1c48f5d2fce87892ace5>
 - Llama-3.2 (3B/1B)
   - <https://huggingface.co/collections/unsloth/llama-32-66f46afde4ca573864321a22>
   - <https://huggingface.co/unsloth/Llama-3.2-1B-Instruct>
   - <https://huggingface.co/unsloth/Llama-3.2-3B-Instruct-GGUF>
+- Mistral Small 3 (2501) (24B)
+  - <https://huggingface.co/bartowski/Mistral-Small-24B-Instruct-2501-GGUF>

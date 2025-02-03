@@ -3,7 +3,7 @@
 *.tar
 *.old*
 _old
-_build
+content/src/tmp-markdown
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

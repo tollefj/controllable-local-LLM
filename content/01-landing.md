@@ -29,6 +29,23 @@ What we want:
 2. A system for handling and orchestrating responses
 3. Something useful you can use in your master's thesis, perhaps!
 
+```{image} ../assets/small-vs-big.png
+:alt: performance of small vs big models
+:class: bg-primary mb-1
+:align: center
+:width: 400px
+```
+
+Also... It's not only cheaper. It's much, much faster (<https://tomtunguz.com/small-but-mighty-ai/>)
+
+| Llama Model | Observed Latency per Token |
+|-------------|---------------------------|
+| 7B         | 18 ms                      |
+| 13B        | 21 ms                      |
+| 70B        | 47 ms                      |
+| 405B       | 70-750 ms                  |
+
+
 ```{image} ../assets/local-llama.png
 :alt: local-llama
 :class: bg-primary mb-1
