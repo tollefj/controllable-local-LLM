@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>experimental!!! &#8212; Local and Controllable LLMs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/src/tool-example';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../01-landing.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/lcllm-logo.png" class="logo__image only-light" alt="Local and Controllable LLMs - Home"/>
+    <img src="../../_static/lcllm-logo.png" class="logo__image only-dark pst-js-only" alt="Local and Controllable LLMs - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../01-landing.html">
+                    Local and Controllable LLMs
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-models.html">Models</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tollefj/controllable-local-LLM" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/src/tool-example.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>experimental!!!</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">experimental!!!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-loading">model loading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#selenium-web-driver">selenium web driver</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>pseudo code for what we want (taken from <a class="reference external" href="https://huggingface.co/docs/smolagents/v1.3.0/en/conceptual_guides/intro_agents">https://huggingface.co/docs/smolagents/v1.3.0/en/conceptual_guides/intro_agents</a>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">memory</span> <span class="o">=</span> <span class="p">[</span><span class="n">user_defined_task</span><span class="p">]</span>
+<span class="k">while</span> <span class="n">llm_should_continue</span><span class="p">(</span><span class="n">memory</span><span class="p">):</span> <span class="c1"># this loop is the multi-step part</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">llm_get_next_action</span><span class="p">(</span><span class="n">memory</span><span class="p">)</span> <span class="c1"># this is the tool-calling part</span>
+    <span class="n">observations</span> <span class="o">=</span> <span class="n">execute_action</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+    <span class="n">memory</span> <span class="o">+=</span> <span class="p">[</span><span class="n">action</span><span class="p">,</span> <span class="n">observations</span><span class="p">]</span>
+</pre></div>
+</div>
+<section id="experimental">
+<h1>experimental!!!<a class="headerlink" href="#experimental" title="Link to this heading">#</a></h1>
+<p>stop the ollama service and start it as follows (assume you have memory for 3 models, we’re using lightweight ones!)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">OLLAMA_MAX_LOADED_MODELS</span><span class="o">=</span><span class="m">3</span><span class="w"> </span><span class="nv">OLLAMA_NUM_PARALLEL</span><span class="o">=</span><span class="m">3</span><span class="w"> </span>ollama<span class="w"> </span>serve
+</pre></div>
+</div>
+</section>
+<section id="model-loading">
+<h1>model loading<a class="headerlink" href="#model-loading" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Models</span><span class="p">,</span> <span class="n">show_models</span><span class="p">,</span> <span class="n">load_model</span>
+
+<span class="n">show_models</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;llama_3_1_8b&quot;</span><span class="p">)</span>
+<span class="c1"># model = load_model(&quot;llama_3_2_3b&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;llama_3_2_1b&#39;, &#39;llama_3_2_3b&#39;, &#39;llama_3_1_8b&#39;, &#39;deepseek_qwen_32b&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="selenium-web-driver">
+<h1>selenium web driver<a class="headerlink" href="#selenium-web-driver" title="Link to this heading">#</a></h1>
+<p>we use this to control the agents’ online presence :-)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">selenium</span><span class="w"> </span><span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">selenium.webdriver.common.by</span><span class="w"> </span><span class="kn">import</span> <span class="n">By</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">selenium.webdriver.common.keys</span><span class="w"> </span><span class="kn">import</span> <span class="n">Keys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">selenium.webdriver.chrome.service</span><span class="w"> </span><span class="kn">import</span> <span class="n">Service</span> <span class="k">as</span> <span class="n">ChromeService</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">webdriver_manager.chrome</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChromeDriverManager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span><span class="p">,</span> <span class="n">Json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Agent</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">system</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">prompt</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">schema</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">generate</span><span class="w"> </span><span class="kn">import</span> <span class="n">generate</span>
+
+<span class="c1"># tools = [</span>
+<span class="c1">#     &quot;search_engine&quot;,</span>
+<span class="c1">#     &quot;dataset_generator&quot;</span>
+<span class="c1"># ]</span>
+<span class="c1"># tools_str = &quot;, &quot;.join(f&quot;{i+1}. {tool}&quot; for i, tool in enumerate(tools))</span>
+
+<span class="c1"># main_system = f&quot;You are an intelligent assistant that helps the user in the necessary steps required to generate a dataset. Based on the users input, you should create tasks as described by the  {len(tools)} tools you have available: {tools_str}.&quot;</span>
+<span class="c1"># print(main_system)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SearchAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;You are tasked with reformulating a topic into a boolean AND/OR search string suitable for search engines. Maximum 3 operations. It MUST include &#39;dataset&#39; or &#39;data sources&#39;. Output in JSON according to the provided schema.&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">prompt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Generate a Google keyword search that will help the user find datasets on the topic of </span><span class="si">{</span><span class="n">topic</span><span class="si">}</span><span class="s2">. Do not constrain the search to specific sites. Use your knowledge of the topic to generate a comprehensive search string.&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">schema</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">class</span><span class="w"> </span><span class="nc">SearchSchema</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+            <span class="n">search</span><span class="p">:</span> <span class="nb">str</span>
+        <span class="k">return</span> <span class="n">SearchSchema</span><span class="o">.</span><span class="n">model_json_schema</span><span class="p">()</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">generate</span><span class="p">(</span>
+            <span class="n">system_prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">system</span><span class="p">(),</span>
+            <span class="n">prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">prompt</span><span class="p">(</span><span class="n">topic</span><span class="p">),</span>
+            <span class="n">schema</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">(),</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">num_ctx</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+            <span class="n">temperature</span><span class="o">=</span><span class="mf">0.5</span>
+        <span class="p">)[</span><span class="s2">&quot;search&quot;</span><span class="p">]</span>
+
+
+<span class="n">TOPIC</span> <span class="o">=</span> <span class="s2">&quot;hateful speech detection&quot;</span>
+<span class="n">main_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;I want to create a dataset on the topic of </span><span class="si">{</span><span class="n">TOPIC</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="n">search_agent</span> <span class="o">=</span> <span class="n">SearchAgent</span><span class="p">()</span>
+
+<span class="n">search_string</span> <span class="o">=</span> <span class="n">search_agent</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="n">TOPIC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">search_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ResponseError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">40</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">main_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;I want to create a dataset on the topic of </span><span class="si">{</span><span class="n">TOPIC</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="n">search_agent</span> <span class="o">=</span> <span class="n">SearchAgent</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">40</span> <span class="n">search_string</span> <span class="o">=</span> <span class="n">search_agent</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="n">TOPIC</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="nb">print</span><span class="p">(</span><span class="n">search_string</span><span class="p">)</span>
+
+<span class="nn">Cell In[5], line 26,</span> in <span class="ni">SearchAgent.__call__</span><span class="nt">(self, topic)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">26</span>     <span class="k">return</span> <span class="n">generate</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="n">system_prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">system</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>         <span class="n">prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">prompt</span><span class="p">(</span><span class="n">topic</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>         <span class="n">schema</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>         <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>         <span class="n">num_ctx</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>         <span class="n">temperature</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="p">)[</span><span class="s2">&quot;search&quot;</span><span class="p">]</span>
+
+<span class="nn">File ~/git/controllable-local-LLM/content/src/generate.py:17,</span> in <span class="ni">generate</span><span class="nt">(system_prompt, prompt, model, schema, parse, num_ctx, num_predict, temperature)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">system_prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">17</span>     <span class="n">response</span><span class="p">:</span> <span class="n">ChatResponse</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">},</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>             <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">},</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>         <span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="n">options</span><span class="o">=</span><span class="p">{</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>             <span class="s2">&quot;num_ctx&quot;</span><span class="p">:</span> <span class="n">num_ctx</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>             <span class="s2">&quot;num_predict&quot;</span><span class="p">:</span> <span class="n">num_predict</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>             <span class="s2">&quot;top_k&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>             <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>             <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>             <span class="s2">&quot;seed&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># this is not needed when temp is 0</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>             <span class="s2">&quot;repeat_penalty&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># remain default for json outputs, from experience.</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>         <span class="p">},</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>         <span class="nb">format</span><span class="o">=</span><span class="n">schema</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="k">if</span> <span class="n">parse</span> <span class="ow">and</span> <span class="n">schema</span><span class="p">:</span>
+
+<span class="nn">File ~/miniconda3/envs/local-llm/lib/python3.12/site-packages/ollama/_client.py:333,</span> in <span class="ni">Client.chat</span><span class="nt">(self, model, messages, tools, stream, format, options, keep_alive)</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span> <span class="k">def</span><span class="w"> </span><span class="nf">chat</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span>   <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>   <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>   <span class="n">keep_alive</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">ChatResponse</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">ChatResponse</span><span class="p">]]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span><span class="sd">   Create a chat response using the requested model.</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">331</span><span class="sd">   Returns `ChatResponse` if `stream` is `False`, otherwise returns a `ChatResponse` generator.</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span><span class="sd">   &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">333</span>   <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span>     <span class="n">ChatResponse</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span>     <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">336</span>     <span class="s1">&#39;/api/chat&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span>     <span class="n">json</span><span class="o">=</span><span class="n">ChatRequest</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span>       <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span>       <span class="n">messages</span><span class="o">=</span><span class="p">[</span><span class="n">message</span> <span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">_copy_messages</span><span class="p">(</span><span class="n">messages</span><span class="p">)],</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>       <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">tool</span> <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="n">_copy_tools</span><span class="p">(</span><span class="n">tools</span><span class="p">)],</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>       <span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>       <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>       <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>       <span class="n">keep_alive</span><span class="o">=</span><span class="n">keep_alive</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span>     <span class="p">)</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">exclude_none</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>     <span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>   <span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/local-llm/lib/python3.12/site-packages/ollama/_client.py:178,</span> in <span class="ni">Client._request</span><span class="nt">(self, cls, stream, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>         <span class="k">yield</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">part</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">inner</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">178</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_request_raw</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+<span class="nn">File ~/miniconda3/envs/local-llm/lib/python3.12/site-packages/ollama/_client.py:122,</span> in <span class="ni">Client._request_raw</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>   <span class="k">return</span> <span class="n">r</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="k">except</span> <span class="n">httpx</span><span class="o">.</span><span class="n">HTTPStatusError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">122</span>   <span class="k">raise</span> <span class="n">ResponseError</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="k">except</span> <span class="n">httpx</span><span class="o">.</span><span class="n">ConnectError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>   <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">CONNECTION_ERROR_MESSAGE</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+
+<span class="ne">ResponseError</span>: model &quot;hf.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF:IQ4_NL&quot; not found, try pulling it first (status code: 404)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">duckduckgo_search</span><span class="w"> </span><span class="kn">import</span> <span class="n">DDGS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">markitdown</span><span class="w"> </span><span class="kn">import</span> <span class="n">MarkItDown</span>
+
+<span class="c1"># ddgs = DDGS(proxy=&quot;tb&quot;, timeout=20) </span>
+<span class="c1"># this requires the TOR browser to be installed and running for a proxy</span>
+<span class="c1"># should be used if you plan on querying a lot.</span>
+<span class="n">ddgs</span> <span class="o">=</span> <span class="n">DDGS</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> 
+<span class="c1"># prepare the markdown extractor</span>
+<span class="n">md</span> <span class="o">=</span> <span class="n">MarkItDown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_urls</span><span class="p">(</span><span class="n">search_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_results</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">ddgs</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">search_string</span><span class="p">,</span> <span class="n">max_results</span><span class="o">=</span><span class="n">max_results</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;us-en&quot;</span><span class="p">,</span> <span class="n">safesearch</span><span class="o">=</span><span class="s2">&quot;on&quot;</span><span class="p">)</span>
+    <span class="n">hrefs</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">hrefs</span>
+
+<span class="n">urls</span> <span class="o">=</span> <span class="n">get_urls</span><span class="p">(</span><span class="n">search_string</span><span class="p">)</span>
+<span class="n">urls</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;https://github.com/aymeam/Datasets-for-Hate-Speech-Detection&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+
+<span class="n">LANGUAGE</span> <span class="o">=</span> <span class="s2">&quot;English&quot;</span>
+<span class="n">search_for_dataset_info_query</span> <span class="o">=</span> <span class="s2">&quot;From the provided markdown text:</span><span class="se">\n</span><span class="si">{MARKDOWN}</span><span class="se">\n</span><span class="s2">Find direct links to datasets, descriptions of datasets, and other information that explains something about the data. The dataset should be in </span><span class="si">{LANGUAGE}</span><span class="s2">.&quot;</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">visit_site</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">page_source</span>
+    <span class="k">return</span> <span class="n">html</span>
+
+<span class="k">for</span> <span class="n">uid</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">urls</span><span class="p">):</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">visit_site</span><span class="p">(</span><span class="n">urls</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">TMP</span> <span class="o">=</span> <span class="s2">&quot;tmp.html&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">TMP</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">TMP</span><span class="p">)</span>
+
+    <span class="c1"># to deal with large contexts, split by headlines</span>
+    <span class="n">hashed_results</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">text_content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#&quot;</span><span class="p">)</span>
+    <span class="n">hashed_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">h</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">hashed_results</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">MAX_RESULTS</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashed_results</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">MAX_RESULTS</span><span class="p">:</span>
+        <span class="n">hashed_results</span> <span class="o">=</span> <span class="n">hashed_results</span><span class="p">[:</span><span class="n">MAX_RESULTS</span><span class="p">]</span>
+
+    <span class="n">TMP_FOLDER</span> <span class="o">=</span> <span class="s2">&quot;tmp-markdown&quot;</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">TMP_FOLDER</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">TMP_FOLDER</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># we store the markdown unique to each URL in the current session:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">hashed_result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hashed_results</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tmp-markdown/</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.md&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">hashed_result</span><span class="p">)</span>
+
+    <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic.json_schema</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenerateJsonSchema</span><span class="p">,</span> <span class="n">JsonSchemaValue</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+
+<span class="n">LANGUAGE</span> <span class="o">=</span> <span class="s2">&quot;English&quot;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">DatasetAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;You are a helpful assistant that retrieves relevant information about datasets in a specific topic.&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">prompt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">markdown_file_path</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">markdown_file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;No data provided.&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;From the provided information:</span><span class="se">\n</span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="se">\n</span><span class="s2">Find details about specific datasets (in </span><span class="si">{</span><span class="n">LANGUAGE</span><span class="si">}</span><span class="s2"> preferably), including information about its language, links, and labels. Determine if the dataset is relevant to the topic of </span><span class="si">{</span><span class="n">TOPIC</span><span class="si">}</span><span class="s2"> and is in the </span><span class="si">{</span><span class="n">LANGUAGE</span><span class="si">}</span><span class="s2"> language, specified by the &#39;relevant&#39; field. Output in JSON.&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">schema</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">class</span><span class="w"> </span><span class="nc">DatasetLabel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+            <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+            <span class="n">num_labels</span><span class="p">:</span> <span class="nb">int</span>
+            <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
+
+        <span class="k">class</span><span class="w"> </span><span class="nc">DatasetSchema</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+            <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+            <span class="n">language</span><span class="p">:</span> <span class="nb">str</span>
+            <span class="n">url</span><span class="p">:</span> <span class="nb">str</span>
+            <span class="n">labels</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DatasetLabel</span><span class="p">]</span>
+            <span class="n">relevant</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">]</span>
+
+        <span class="k">class</span><span class="w"> </span><span class="nc">DatasetFinderSchema</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+            <span class="n">datasets</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DatasetSchema</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">DatasetFinderSchema</span><span class="o">.</span><span class="n">model_json_schema</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">markdown_file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">generate</span><span class="p">(</span>
+            <span class="n">system_prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">system</span><span class="p">(),</span>
+            <span class="n">prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">prompt</span><span class="p">(</span><span class="n">markdown_file_path</span><span class="o">=</span><span class="n">markdown_file_path</span><span class="p">),</span>
+            <span class="n">schema</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">(),</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">num_ctx</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span>
+            <span class="n">temperature</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="p">)[</span><span class="s2">&quot;datasets&quot;</span><span class="p">]</span>
+
+<span class="n">dataset_agent</span> <span class="o">=</span> <span class="n">DatasetAgent</span><span class="p">()</span>
+
+<span class="c1"># data_paths = [f&quot;{TMP_FOLDER}/{i}.md&quot; for i in range(len(hashed_results))]</span>
+
+<span class="k">for</span> <span class="n">uid</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">urls</span><span class="p">):</span>
+    <span class="n">data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TMP_FOLDER</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.md&quot;</span><span class="p">)</span>
+    <span class="n">data_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">TMP_FOLDER</span><span class="p">))</span>
+    
+    <span class="k">for</span> <span class="n">data_path</span> <span class="ow">in</span> <span class="n">data_paths</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+        <span class="n">md_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TMP_FOLDER</span><span class="p">,</span> <span class="n">data_path</span><span class="p">)</span>
+        <span class="n">datasets</span> <span class="o">=</span> <span class="n">dataset_agent</span><span class="p">(</span><span class="n">markdown_file_path</span><span class="o">=</span><span class="n">md_file</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">datasets</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;___&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0_0.md
+[]
+___
+0_1.md
+[{&#39;name&#39;: &#39;Hateful Speech Detection Dataset&#39;, &#39;language&#39;: &#39;English&#39;, &#39;url&#39;: &#39;https://github.com/your-username/hateful-speech-detection-dataset&#39;, &#39;labels&#39;: [{&#39;name&#39;: &#39;hateful&#39;, &#39;num_labels&#39;: 1000, &#39;description&#39;: &#39;Hateful speech labels&#39;}, {&#39;name&#39;: &#39;not_hateful&#39;, &#39;num_labels&#39;: 1000, &#39;description&#39;: &#39;Not hateful speech labels&#39;}], &#39;relevant&#39;: &#39;yes&#39;}, {&#39;name&#39;: &#39;English Hate Speech Dataset&#39;, &#39;language&#39;: &#39;English&#39;, &#39;url&#39;: &#39;https://github.com/your-username/english-hate-speech-dataset&#39;, &#39;labels&#39;: [{&#39;name&#39;: &#39;hate&#39;, &#39;num_labels&#39;: 500, &#39;description&#39;: &#39;Hate speech labels&#39;}, {&#39;name&#39;: &#39;not_hate&#39;, &#39;num_labels&#39;: 500, &#39;description&#39;: &#39;Not hate speech labels&#39;}], &#39;relevant&#39;: &#39;yes&#39;}]
+___
+0_2.md
+[{&#39;name&#39;: &#39;Hate Speech Detection Dataset&#39;, &#39;language&#39;: &#39;English&#39;, &#39;url&#39;: &#39;https://example.com/hate-speech-dataset&#39;, &#39;labels&#39;: [{&#39;name&#39;: &#39;Hate Speech&#39;, &#39;num_labels&#39;: 3, &#39;description&#39;: &#39;Text that is intended to incite hatred or violence against a particular group or individual.&#39;}, {&#39;name&#39;: &#39;Not Hate Speech&#39;, &#39;num_labels&#39;: 2, &#39;description&#39;: &#39;Text that is not intended to incite hatred or violence.&#39;}, {&#39;name&#39;: &#39;Neutral&#39;, &#39;num_labels&#39;: 1, &#39;description&#39;: &#39;Text that is neutral and does not express any sentiment.&#39;}], &#39;relevant&#39;: &#39;yes&#39;}, {&#39;name&#39;: &#39;Social Media Hate Speech Dataset&#39;, &#39;language&#39;: &#39;English&#39;, &#39;url&#39;: &#39;https://example.com/social-media-hate-speech-dataset&#39;, &#39;labels&#39;: [{&#39;name&#39;: &#39;Hate Speech&#39;, &#39;num_labels&#39;: 4, &#39;description&#39;: &#39;Text that is intended to incite hatred or violence against a particular group or individual.&#39;}, {&#39;name&#39;: &#39;Not Hate Speech&#39;, &#39;num_labels&#39;: 3, &#39;description&#39;: &#39;Text that is not intended to incite hatred or violence.&#39;}, {&#39;name&#39;: &#39;Neutral&#39;, &#39;num_labels&#39;: 2, &#39;description&#39;: &#39;Text that is neutral and does not express any sentiment.&#39;}], &#39;relevant&#39;: &#39;yes&#39;}]
+___
+0_3.md
+[{&#39;name&#39;: &#39;Datasets for Hate Speech Detection&#39;, &#39;language&#39;: &#39;English&#39;, &#39;url&#39;: &#39;https://github.com/aymeam/Datasets-for-Hate-Speech-Detection&#39;, &#39;labels&#39;: [{&#39;name&#39;: &#39;hate speech&#39;, &#39;num_labels&#39;: 1, &#39;description&#39;: &#39;Hate speech detection&#39;}], &#39;relevant&#39;: &#39;yes&#39;}]
+___
+0_4.md
+[{&#39;name&#39;: &#39;Harvard Hate Speech Corpus&#39;, &#39;language&#39;: &#39;English&#39;, &#39;url&#39;: &#39;https://github.com/harvardnlp/Harvard-Hate-Speech-Corpus&#39;, &#39;labels&#39;: [{&#39;name&#39;: &#39;hate&#39;, &#39;num_labels&#39;: 2, &#39;description&#39;: &#39;Hate speech&#39;}, {&#39;name&#39;: &#39;not_hate&#39;, &#39;num_labels&#39;: 2, &#39;description&#39;: &#39;Not hate speech&#39;}], &#39;relevant&#39;: &#39;yes&#39;}, {&#39;name&#39;: &#39;Social Media Hate Speech Detection&#39;, &#39;language&#39;: &#39;English&#39;, &#39;url&#39;: &#39;https://github.com/firstory/social-media-hate-speech-detection&#39;, &#39;labels&#39;: [{&#39;name&#39;: &#39;hate&#39;, &#39;num_labels&#39;: 2, &#39;description&#39;: &#39;Hate speech&#39;}, {&#39;name&#39;: &#39;not_hate&#39;, &#39;num_labels&#39;: 2, &#39;description&#39;: &#39;Not hate speech&#39;}], &#39;relevant&#39;: &#39;yes&#39;}, {&#39;name&#39;: &#39;Hateful Language Detection&#39;, &#39;language&#39;: &#39;English&#39;, &#39;url&#39;: &#39;https://github.com/firstory/hateful-language-detection&#39;, &#39;labels&#39;: [{&#39;name&#39;: &#39;hate&#39;, &#39;num_labels&#39;: 2, &#39;description&#39;: &#39;Hate speech&#39;}, {&#39;name&#39;: &#39;not_hate&#39;, &#39;num_labels&#39;: 2, &#39;description&#39;: &#39;Not hate speech&#39;}], &#39;relevant&#39;: &#39;yes&#39;}]
+___
+0_5.md
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">57</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="nb">print</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="n">md_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TMP_FOLDER</span><span class="p">,</span> <span class="n">data_path</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">57</span> <span class="n">datasets</span> <span class="o">=</span> <span class="n">dataset_agent</span><span class="p">(</span><span class="n">markdown_file_path</span><span class="o">=</span><span class="n">md_file</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="nb">print</span><span class="p">(</span><span class="n">datasets</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;___&quot;</span><span class="p">)</span>
+
+<span class="nn">Cell In[35], line 37,</span> in <span class="ni">DatasetAgent.__call__</span><span class="nt">(self, markdown_file_path)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">markdown_file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">37</span>     <span class="k">return</span> <span class="n">generate</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>         <span class="n">system_prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">system</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>         <span class="n">prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">prompt</span><span class="p">(</span><span class="n">markdown_file_path</span><span class="o">=</span><span class="n">markdown_file_path</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>         <span class="n">schema</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>         <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="n">num_ctx</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="n">temperature</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="p">)[</span><span class="s2">&quot;datasets&quot;</span><span class="p">]</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/content/generate.py:17,</span> in <span class="ni">generate</span><span class="nt">(system_prompt, prompt, model, schema, parse, num_ctx, num_predict, temperature)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">system_prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">17</span>     <span class="n">response</span><span class="p">:</span> <span class="n">ChatResponse</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">},</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>             <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">},</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>         <span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="n">options</span><span class="o">=</span><span class="p">{</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>             <span class="s2">&quot;num_ctx&quot;</span><span class="p">:</span> <span class="n">num_ctx</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>             <span class="s2">&quot;num_predict&quot;</span><span class="p">:</span> <span class="n">num_predict</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>             <span class="s2">&quot;top_k&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>             <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>             <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>             <span class="s2">&quot;seed&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># this is not needed when temp is 0</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>             <span class="s2">&quot;repeat_penalty&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># remain default for json outputs, from experience.</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>         <span class="p">},</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>         <span class="nb">format</span><span class="o">=</span><span class="n">schema</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="k">if</span> <span class="n">parse</span> <span class="ow">and</span> <span class="n">schema</span><span class="p">:</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/ollama/_client.py:333,</span> in <span class="ni">Client.chat</span><span class="nt">(self, model, messages, tools, stream, format, options, keep_alive)</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span> <span class="k">def</span><span class="w"> </span><span class="nf">chat</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span>   <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>   <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>   <span class="n">keep_alive</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">ChatResponse</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">ChatResponse</span><span class="p">]]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span><span class="sd">   Create a chat response using the requested model.</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">331</span><span class="sd">   Returns `ChatResponse` if `stream` is `False`, otherwise returns a `ChatResponse` generator.</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span><span class="sd">   &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">333</span>   <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span>     <span class="n">ChatResponse</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span>     <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">336</span>     <span class="s1">&#39;/api/chat&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span>     <span class="n">json</span><span class="o">=</span><span class="n">ChatRequest</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span>       <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span>       <span class="n">messages</span><span class="o">=</span><span class="p">[</span><span class="n">message</span> <span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">_copy_messages</span><span class="p">(</span><span class="n">messages</span><span class="p">)],</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>       <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">tool</span> <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="n">_copy_tools</span><span class="p">(</span><span class="n">tools</span><span class="p">)],</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>       <span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>       <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>       <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>       <span class="n">keep_alive</span><span class="o">=</span><span class="n">keep_alive</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span>     <span class="p">)</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">exclude_none</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>     <span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>   <span class="p">)</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/ollama/_client.py:178,</span> in <span class="ni">Client._request</span><span class="nt">(self, cls, stream, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>         <span class="k">yield</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">part</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">inner</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">178</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_request_raw</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/ollama/_client.py:118,</span> in <span class="ni">Client._request_raw</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span> <span class="k">def</span><span class="w"> </span><span class="nf">_request_raw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span>   <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">118</span>     <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>     <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>     <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpx/_client.py:825,</span> in <span class="ni">Client.request</span><span class="nt">(self, method, url, content, data, files, json, params, headers, cookies, auth, follow_redirects, timeout, extensions)</span>
+<span class="g g-Whitespace">    </span><span class="mi">810</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">812</span> <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">813</span>     <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">814</span>     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span>     <span class="n">extensions</span><span class="o">=</span><span class="n">extensions</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">824</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">825</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span> <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">)</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpx/_client.py:914,</span> in <span class="ni">Client.send</span><span class="nt">(self, request, stream, auth, follow_redirects)</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_timeout</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span> <span class="n">auth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_request_auth</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">914</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_handling_auth</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">915</span>     <span class="n">request</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">916</span>     <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">917</span>     <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">918</span>     <span class="n">history</span><span class="o">=</span><span class="p">[],</span>
+<span class="g g-Whitespace">    </span><span class="mi">919</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">920</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">921</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">stream</span><span class="p">:</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpx/_client.py:942,</span> in <span class="ni">Client._send_handling_auth</span><span class="nt">(self, request, auth, follow_redirects, history)</span>
+<span class="g g-Whitespace">    </span><span class="mi">939</span> <span class="n">request</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">auth_flow</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">941</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">942</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_handling_redirects</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">943</span>         <span class="n">request</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span>         <span class="n">follow_redirects</span><span class="o">=</span><span class="n">follow_redirects</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span>         <span class="n">history</span><span class="o">=</span><span class="n">history</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span>         <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpx/_client.py:979,</span> in <span class="ni">Client._send_handling_redirects</span><span class="nt">(self, request, follow_redirects, history)</span>
+<span class="g g-Whitespace">    </span><span class="mi">976</span> <span class="k">for</span> <span class="n">hook</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event_hooks</span><span class="p">[</span><span class="s2">&quot;request&quot;</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">977</span>     <span class="n">hook</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">979</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_single_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">980</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">981</span>     <span class="k">for</span> <span class="n">hook</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event_hooks</span><span class="p">[</span><span class="s2">&quot;response&quot;</span><span class="p">]:</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpx/_client.py:1014,</span> in <span class="ni">Client._send_single_request</span><span class="nt">(self, request)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1009</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1010</span>         <span class="s2">&quot;Attempted to send an async request with a sync Client instance.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1011</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="k">with</span> <span class="n">request_context</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1014</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">transport</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1016</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">stream</span><span class="p">,</span> <span class="n">SyncByteStream</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1018</span> <span class="n">response</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="n">request</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpx/_transports/default.py:250,</span> in <span class="ni">HTTPTransport.handle_request</span><span class="nt">(self, request)</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="n">req</span> <span class="o">=</span> <span class="n">httpcore</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="n">url</span><span class="o">=</span><span class="n">httpcore</span><span class="o">.</span><span class="n">URL</span><span class="p">(</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="n">extensions</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">extensions</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="k">with</span> <span class="n">map_httpcore_exceptions</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">250</span>     <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pool</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">stream</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span> <span class="k">return</span> <span class="n">Response</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span>     <span class="n">status_code</span><span class="o">=</span><span class="n">resp</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span>     <span class="n">headers</span><span class="o">=</span><span class="n">resp</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span>     <span class="n">stream</span><span class="o">=</span><span class="n">ResponseStream</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">stream</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span>     <span class="n">extensions</span><span class="o">=</span><span class="n">resp</span><span class="o">.</span><span class="n">extensions</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span> <span class="p">)</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py:256,</span> in <span class="ni">ConnectionPool.handle_request</span><span class="nt">(self, request)</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span>         <span class="n">closing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assign_requests_to_connections</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_connections</span><span class="p">(</span><span class="n">closing</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">256</span>     <span class="k">raise</span> <span class="n">exc</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span> <span class="c1"># Return the response. Note that in this case we still have to manage</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span> <span class="c1"># the point at which the response is closed.</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">stream</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py:236,</span> in <span class="ni">ConnectionPool.handle_request</span><span class="nt">(self, request)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">pool_request</span><span class="o">.</span><span class="n">wait_for_connection</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="c1"># Send the request on the assigned connection.</span>
+<span class="ne">--&gt; </span><span class="mi">236</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>         <span class="n">pool_request</span><span class="o">.</span><span class="n">request</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="k">except</span> <span class="n">ConnectionNotAvailable</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="c1"># In some cases a connection may initially be available to</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="c1"># handle a request, but then become unavailable.</span>
+<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="c1">#</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="c1"># In this case we clear the connection and try again.</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span>     <span class="n">pool_request</span><span class="o">.</span><span class="n">clear_connection</span><span class="p">()</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py:103,</span> in <span class="ni">HTTPConnection.handle_request</span><span class="nt">(self, request)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_connect_failed</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="k">raise</span> <span class="n">exc</span>
+<span class="ne">--&gt; </span><span class="mi">103</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:136,</span> in <span class="ni">HTTP11Connection.handle_request</span><span class="nt">(self, request)</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="k">with</span> <span class="n">Trace</span><span class="p">(</span><span class="s2">&quot;response_closed&quot;</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span> <span class="k">as</span> <span class="n">trace</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_response_closed</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">136</span> <span class="k">raise</span> <span class="n">exc</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:106,</span> in <span class="ni">HTTP11Connection.handle_request</span><span class="nt">(self, request)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="k">pass</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span> <span class="k">with</span> <span class="n">Trace</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="s2">&quot;receive_response_headers&quot;</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">kwargs</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="p">)</span> <span class="k">as</span> <span class="n">trace</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>         <span class="n">http_version</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>         <span class="n">status</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="n">reason_phrase</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>         <span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>         <span class="n">trailing_data</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">106</span>     <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_receive_response_headers</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="n">trace</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="n">http_version</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="n">status</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span>         <span class="n">reason_phrase</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="n">network_stream</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_stream</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:177,</span> in <span class="ni">HTTP11Connection._receive_response_headers</span><span class="nt">(self, request)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="n">timeout</span> <span class="o">=</span> <span class="n">timeouts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;read&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">177</span>     <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_receive_event</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">h11</span><span class="o">.</span><span class="n">Response</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>         <span class="k">break</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py:217,</span> in <span class="ni">HTTP11Connection._receive_event</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h11_state</span><span class="o">.</span><span class="n">next_event</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="k">if</span> <span class="n">event</span> <span class="ow">is</span> <span class="n">h11</span><span class="o">.</span><span class="n">NEED_DATA</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">217</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>         <span class="bp">self</span><span class="o">.</span><span class="n">READ_NUM_BYTES</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>     <span class="c1"># If we feed this case through h11 we&#39;ll raise an exception like:</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="c1">#</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="c1">#     httpcore.RemoteProtocolError: can&#39;t handle event type</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span>     <span class="c1"># perspective. Instead we handle this case distinctly and treat</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span>     <span class="c1"># it as a ConnectError.</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="k">if</span> <span class="n">data</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h11_state</span><span class="o">.</span><span class="n">their_state</span> <span class="o">==</span> <span class="n">h11</span><span class="o">.</span><span class="n">SEND_RESPONSE</span><span class="p">:</span>
+
+<span class="nn">File ~/git/open-source/books/toffellm/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py:128,</span> in <span class="ni">SyncStream.read</span><span class="nt">(self, max_bytes, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span> <span class="k">with</span> <span class="n">map_exceptions</span><span class="p">(</span><span class="n">exc_map</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">128</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">max_bytes</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/src"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">experimental!!!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-loading">model loading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#selenium-web-driver">selenium web driver</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By tollef jørgensen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
