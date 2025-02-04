@@ -1,0 +1,828 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API &#8212; Local and Controllable LLMs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/api';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Models" href="models.html" />
+    <link rel="prev" title="Setup" href="setup.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="landing.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/lcllm-logo.png" class="logo__image only-light" alt="Local and Controllable LLMs - Home"/>
+    <img src="../_static/lcllm-logo.png" class="logo__image only-dark pst-js-only" alt="Local and Controllable LLMs - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="landing.html">
+                    Local and Controllable LLMs
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tollefj/controllable-local-LLM" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/api.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>API</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-responses">Generating responses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-the-responses">Controlling the responses…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#even-more-control">Even more control</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h1>
+<p>download a wrapper for the API, in this case in python: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ollama</span></code></p>
+<p>we then define our model as a variable and verify its content:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import ollama
+
+model = &quot;hf.co/bartowski/Llama-3.2-1B-Instruct-GGUF:Q6_K_L&quot;
+info = ollama.show(model).modelinfo
+for k, v in info.items():
+    print(f&quot;{k}: {v}&quot;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>general.architecture: llama
+general.basename: Llama-3.2
+general.file_type: 18
+general.finetune: Instruct
+general.languages: [&#39;en&#39;, &#39;de&#39;, &#39;fr&#39;, &#39;it&#39;, &#39;pt&#39;, &#39;hi&#39;, &#39;es&#39;, &#39;th&#39;]
+general.license: llama3.2
+general.parameter_count: 1235814432
+general.quantization_version: 2
+general.size_label: 1B
+general.tags: [&#39;facebook&#39;, &#39;meta&#39;, &#39;pytorch&#39;, &#39;llama&#39;, &#39;llama-3&#39;, &#39;text-generation&#39;]
+general.type: model
+llama.attention.head_count: 32
+llama.attention.head_count_kv: 8
+llama.attention.key_length: 64
+llama.attention.layer_norm_rms_epsilon: 1e-05
+llama.attention.value_length: 64
+llama.block_count: 16
+llama.context_length: 131072
+llama.embedding_length: 2048
+llama.feed_forward_length: 8192
+llama.rope.dimension_count: 64
+llama.rope.freq_base: 500000
+llama.vocab_size: 128256
+quantize.imatrix.chunks_count: 125
+quantize.imatrix.dataset: /training_dir/calibration_datav3.txt
+quantize.imatrix.entries_count: 112
+quantize.imatrix.file: /models_out/Llama-3.2-1B-Instruct-GGUF/Llama-3.2-1B-Instruct.imatrix
+tokenizer.ggml.bos_token_id: 128000
+tokenizer.ggml.eos_token_id: 128009
+tokenizer.ggml.merges: None
+tokenizer.ggml.model: gpt2
+tokenizer.ggml.pre: llama-bpe
+tokenizer.ggml.token_type: None
+tokenizer.ggml.tokens: None
+</pre></div>
+</div>
+</div>
+</div>
+<section id="generating-responses">
+<h2>Generating responses<a class="headerlink" href="#generating-responses" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from ollama import chat
+
+prompt = &quot;Give me a simple recipe for a delicious citrusy cake. Make sure units are in grams when it makes sense. Temperatures should be in C.&quot;
+
+response = chat(
+    model=model,
+    messages=[
+        {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt},
+    ],
+)
+print(response.message.content)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here&#39;s a simple recipe for a delicious citrusy cake that uses metric units and Celsius temperatures:
+
+**Citrusy Lemon Cake Recipe**
+
+Ingredients:
+
+* 250g all-purpose flour
+* 150g granulated sugar
+* 30g unsalted butter, softened
+* 2 large eggs
+* 20g freshly squeezed lemon juice (about 1/4 of a medium-sized lemon)
+* 10g grated lemon zest
+* 5g baking powder
+* 3g salt
+
+Instructions:
+
+1. Preheat your oven to 200°C (180°C fan-forced).
+2. Grease and flour two 20cm round cake pans.
+3. In a medium bowl, whisk together the flour, sugar, and baking powder.
+4. In a large bowl, using an electric mixer, beat the butter until creamy. Add eggs one at a time, beating well after each addition.
+5. Gradually add the dry ingredients to the wet ingredients, alternating with lemon juice and zest, beginning and ending with the dry ingredients. Beat just until combined.
+6. Divide the batter evenly between the prepared pans and smooth the tops.
+7. Bake for 25-30 minutes or until a toothpick inserted into the center of each cake comes out clean.
+
+**Tips:**
+
+* Make sure to use fresh lemons, as they will give the best flavor and texture in your cake.
+* Don&#39;t overmix the batter, as this can result in a dense cake.
+* If you prefer a stronger lemon flavor, you can increase the amount of lemon juice to 1/2 cup or more.
+
+**Enjoy your delicious citrusy cake!**
+
+Note: As this is a basic recipe, I didn&#39;t include any frosting or decorations. Feel free to get creative and add your favorite toppings once you&#39;ve made the cake!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="controlling-the-responses">
+<h2>Controlling the responses…<a class="headerlink" href="#controlling-the-responses" title="Link to this heading">#</a></h2>
+<p>Can only do so much with raw text… Let’s up the controllability!</p>
+<p>First off, there are a few common parameters that can be used to tune the outputs.
+Some are related to “creativity”, whereas some control the predictability and determinism of the outputs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;num_ctx&quot;</span><span class="p">:</span> <span class="s2">&quot;Maximum number of tokens the model can process in a single input.&quot;</span>
+<span class="s2">&quot;seed&quot;</span><span class="p">:</span> <span class="s2">&quot;Random seed for deterministic generation.&quot;</span>
+<span class="s2">&quot;num_predict&quot;</span><span class="p">:</span> <span class="s2">&quot;Maximum number of tokens to generate in output.&quot;</span>
+<span class="s2">&quot;top_k&quot;</span><span class="p">:</span> <span class="s2">&quot;Limits sampling to the top K most probable tokens.&quot;</span>
+<span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="s2">&quot;Limits sampling to the smallest set of tokens with cumulative probability &gt;= top_p.&quot;</span>
+<span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="s2">&quot;Controls randomness in generation; higher values increase randomness.&quot;</span>
+<span class="s2">&quot;repeat_penalty&quot;</span><span class="p">:</span> <span class="s2">&quot;Penalty for repeated tokens to reduce repetition in output.&quot;</span>
+</pre></div>
+</div>
+<p>We can also add a system prompt (see the <code class="docutils literal notranslate"><span class="pre">role</span></code> in the messages below) to guide the model in the right direction. Being explicit on its role can help both the behavior and output formats.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from ollama import ChatResponse, chat
+from pydantic.types import JsonSchemaValue
+from typing import Optional, List
+
+system_prompt = &quot;You are a helpful assistant that provides clear and concise answers to the user&#39;s needs. Always answer in a JSON format.&quot;
+
+def generate(
+    prompt: str,
+    json_format: Optional[JsonSchemaValue] = None,
+    model=model,
+    system_prompt=system_prompt,
+) -&gt; str:
+    response: ChatResponse = chat(
+        model=model,
+        messages=[
+            {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: system_prompt},
+            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt},
+        ],
+        options={
+            &quot;num_ctx&quot;: 4096,
+            &quot;num_predict&quot;: 1024,
+            &quot;top_k&quot;: 50,
+            &quot;top_p&quot;: 0.95,
+            &quot;temperature&quot;: 0.0,
+            &quot;seed&quot;: 0,  # this is not needed when temp is 0
+            &quot;repeat_penalty&quot;: 1.0,  # remain default for json outputs, from experience.
+        },
+        format=json_format,
+        stream=False,
+    )
+    return response.message.content
+
+# prompt = &quot;give me 5 interesting facts about the universe&quot;
+prompt = &quot;Give me a simple recipe for a delicious citrusy cake. Make sure units are in grams when it makes sense. Temperatures should be in C.&quot;
+print(generate(prompt))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;recipe&quot;: {
+    &quot;name&quot;: &quot;Citrusy Cake&quot;,
+    &quot;ingredients&quot;: [
+      {
+        &quot;name&quot;: &quot;Flour&quot;,
+        &quot;quantity&quot;: 250g,
+        &quot;unit&quot;: &quot;grams&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Sugar&quot;,
+        &quot;quantity&quot;: 200g,
+        &quot;unit&quot;: &quot;grams&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Baking powder&quot;,
+        &quot;quantity&quot;: 5g,
+        &quot;unit&quot;: &quot;grams&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Salt&quot;,
+        &quot;quantity&quot;: 2g,
+        &quot;unit&quot;: &quot;grams&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Butter&quot;,
+        &quot;quantity&quot;: 100g,
+        &quot;unit&quot;: &quot;grams&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Eggs&quot;,
+        &quot;quantity&quot;: 4,
+        &quot;unit&quot;: &quot;units&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Milk&quot;,
+        &quot;quantity&quot;: 250g,
+        &quot;unit&quot;: &quot;grams&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Zest of 1 orange&quot;,
+        &quot;quantity&quot;: 20g,
+        &quot;unit&quot;: &quot;grams&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Zest of 1 lemon&quot;,
+        &quot;quantity&quot;: 15g,
+        &quot;unit&quot;: &quot;grams&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Juice of 1 lemon&quot;,
+        &quot;quantity&quot;: 30g,
+        &quot;unit&quot;: &quot;grams&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Juice of 1 orange&quot;,
+        &quot;quantity&quot;: 30g,
+        &quot;unit&quot;: &quot;grams&quot;
+      }
+    ],
+    &quot;instructions&quot;: [
+      {
+        &quot;step&quot;: &quot;Preheat oven to 180°C&quot;,
+        &quot;description&quot;: &quot;Preheat oven to 180°C&quot;
+      },
+      {
+        &quot;step&quot;: &quot;Mix dry ingredients&quot;,
+        &quot;description&quot;: &quot;Mix flour, sugar, baking powder, and salt&quot;
+      },
+      {
+        &quot;step&quot;: &quot;Mix wet ingredients&quot;,
+        &quot;description&quot;: &quot;Mix butter, eggs, milk, orange zest, lemon zest, lemon juice, and orange juice&quot;
+      },
+      {
+        &quot;step&quot;: &quot;Combine wet and dry ingredients&quot;,
+        &quot;description&quot;: &quot;Combine wet and dry ingredients&quot;
+      },
+      {
+        &quot;step&quot;: &quot;Pour batter into a greased cake pan&quot;,
+        &quot;description&quot;: &quot;Pour batter into a greased cake pan&quot;
+      },
+      {
+        &quot;step&quot;: &quot;Bake for 35-40 minutes&quot;,
+        &quot;description&quot;: &quot;Bake for 35-40 minutes&quot;
+      }
+    ]
+  }
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="even-more-control">
+<h2>Even more control<a class="headerlink" href="#even-more-control" title="Link to this heading">#</a></h2>
+<p>Now, the format is already following a JSON from the system prompt, but we cannot know beforehand what fields are inside it. Let’s fix this by introducing a <strong>schema</strong>, a structured definition of our output.</p>
+<p>We start building our schema through a typed BaseModel in pydantic (which will be converted to a grammar-like format called GBNF, that you can read about here: <a class="github reference external" href="https://github.com/ggerganov/llama.cpp/blob/master/grammars/README.md">ggerganov/llama.cpp</a>)</p>
+<p>If you were not to use ollama, you could pass a schema directly, which again will be converted to GBNF:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;questions&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;minItems&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;maxItems&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}},</span>
+                <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;question&quot;</span><span class="p">],</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span> <span class="s2">&quot;enum&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]},</span>
+        <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;questions&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="s2">&quot;summary&quot;</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>However, the easiest and most programmatic way of handling this is define interfaces that are automatically parsed as a schema before being sent through to the llama.cpp api:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from pydantic import BaseModel
+
+class Ingredient(BaseModel):
+    name: str
+    quantity: float
+    unit: str
+
+class RecipeInstruction(BaseModel):
+    step: int
+    description: str
+
+class Recipe(BaseModel):
+    title: str
+    ingredients: List[Ingredient]
+    instructions: List[RecipeInstruction]
+    tools: List[str]
+
+# we can now use eval to properly format the json as an object
+# using `eval`from the output of an API is generally not safe, but we can safely do it from the JSON-output of a local model.
+eval(generate(prompt, json_format=Recipe.model_json_schema()))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;title&#39;: &#39;Citrusy Cake Recipe&#39;,
+ &#39;ingredients&#39;: [{&#39;name&#39;: &#39;All-purpose flour&#39;,
+   &#39;quantity&#39;: 250,
+   &#39;unit&#39;: &#39;grams&#39;},
+  {&#39;name&#39;: &#39;Granulated sugar&#39;, &#39;quantity&#39;: 200, &#39;unit&#39;: &#39;grams&#39;},
+  {&#39;name&#39;: &#39;Unsalted butter, softened&#39;, &#39;quantity&#39;: 150, &#39;unit&#39;: &#39;grams&#39;},
+  {&#39;name&#39;: &#39;Egg, large&#39;, &#39;quantity&#39;: 2, &#39;unit&#39;: &#39;grams&#39;},
+  {&#39;name&#39;: &#39;Zest of 1 lemon&#39;, &#39;quantity&#39;: 20, &#39;unit&#39;: &#39;grams&#39;},
+  {&#39;name&#39;: &#39;Zest of 1 orange&#39;, &#39;quantity&#39;: 20, &#39;unit&#39;: &#39;grams&#39;},
+  {&#39;name&#39;: &#39;Zest of 1 lime&#39;, &#39;quantity&#39;: 20, &#39;unit&#39;: &#39;grams&#39;},
+  {&#39;name&#39;: &#39;Vanilla extract&#39;, &#39;quantity&#39;: 5, &#39;unit&#39;: &#39;grams&#39;},
+  {&#39;name&#39;: &#39;Citrus juice (e.g. lemon, orange, lime)&#39;,
+   &#39;quantity&#39;: 100,
+   &#39;unit&#39;: &#39;grams&#39;}],
+ &#39;instructions&#39;: [{&#39;step&#39;: 1,
+   &#39;description&#39;: &#39;Preheat the oven to 180°C (350°F). Grease two 20cm (8 inch) round cake pans and line the bottoms with parchment paper.&#39;},
+  {&#39;step&#39;: 2,
+   &#39;description&#39;: &#39;In a medium bowl, whisk together flour, sugar, and salt.&#39;},
+  {&#39;step&#39;: 3,
+   &#39;description&#39;: &#39;In a large bowl, using an electric mixer, beat the butter until creamy. Add the egg and beat until well combined.&#39;},
+  {&#39;step&#39;: 4,
+   &#39;description&#39;: &#39;Gradually add the dry ingredients to the butter mixture, alternating with the citrus juice, beginning and ending with the dry ingredients. Beat just until combined.&#39;},
+  {&#39;step&#39;: 5,
+   &#39;description&#39;: &#39;Add the lemon, orange, and lime zest and vanilla extract to the batter. Beat until well combined.&#39;},
+  {&#39;step&#39;: 6,
+   &#39;description&#39;: &#39;Divide the batter evenly between the prepared pans and smooth the tops.&#39;},
+  {&#39;step&#39;: 7,
+   &#39;description&#39;: &#39;Bake for 25-30 minutes, or until a toothpick inserted into the center of each cake comes out clean.&#39;},
+  {&#39;step&#39;: 8,
+   &#39;description&#39;: &#39;Allow the cakes to cool in the pans for 5 minutes, then transfer them to a wire rack to cool completely.&#39;},
+  {&#39;step&#39;: 9,
+   &#39;description&#39;: &#39;Once the cakes are completely cool, you can frost and decorate them as desired.&#39;}],
+ &#39;tools&#39;: [&#39;electric mixer&#39;,
+  &#39;whisk&#39;,
+  &#39;measuring cups&#39;,
+  &#39;spoon&#39;,
+  &#39;parchment paper&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="setup.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Setup</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="models.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Models</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-responses">Generating responses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-the-responses">Controlling the responses…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#even-more-control">Even more control</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By tollef jørgensen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
