@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field
 from typing import List, Literal
 
 
-class SearchAgent(Agent):
+class SearchStringAgent(Agent):
     def __init__(self, model, topic):
         super().__init__(model)
         self.topic = topic

@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import time
 from duckduckgo_search import DDGS
-from markitdown import MarkItDown
+from markitdown import MarkItDown, FileConversionException
 from typing import Any, List, Tuple
 from tqdm.notebook import tqdm
 import requests
@@ -72,9 +72,13 @@ class WebSearch:
     def __init__(self):
         self.ddgs = DDGS(timeout=20)
 
-    def get_urls(self, query: str, max_results: int = 3, locale="us-en") -> List[str]:
+    def get_urls(
+        self, query: str, max_results: int = 3, locale="us-en", pdf_only=False
+    ) -> List[str]:
+        if pdf_only:
+            query = f"filetype:pdf {query}"
         res = self.ddgs.text(
-            f"filetype:pdf {query}",
+            query,
             max_results=max_results,
             region=locale,
             safesearch="on",
@@ -93,7 +97,12 @@ def split_markdown(
     tqdm_iterator = tqdm(current_pdfs, desc="Extracting markdown")
 
     for pdf_id, pdf in enumerate(tqdm_iterator):
-        result = md.convert(os.path.join(pdf_folder, pdf))
+        try:
+            result = md.convert(os.path.join(pdf_folder, pdf))
+        except FileConversionException:
+            print(f"Error converting {pdf}")
+            continue
+
         # to deal with large contexts, split by headlines
         hashed_results = result.text_content.split("\n#")
         hashed_results = [
