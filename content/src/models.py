@@ -6,6 +6,7 @@ class Models(BaseModel):
     llama_3_2_3b: str = "hf.co/unsloth/Llama-3.2-3B-Instruct-GGUF:Q6_K"
     llama_3_1_8b: str = "hf.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF:IQ4_NL"
     mistral_sm_24b: str = "hf.co/bartowski/Mistral-Small-24B-Instruct-2501-GGUF:Q4_K_M"
+    deepseek_qwen_32: str = "hf.co/unsloth/DeepSeek-R1-Distill-Qwen-32B-GGUF:Q4_K_M"
 
 
 def get_models() -> str:

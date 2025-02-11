@@ -26,8 +26,8 @@ def generate(
         options={
             "num_ctx": num_ctx,
             "num_predict": num_predict,
-            "top_k": 100,
-            "top_p": 0.8,
+            "top_k": 50,
+            "top_p": 0.95,
             "temperature": temperature,
             "seed": 0,  # this is not needed when temp is 0
             "repeat_penalty": 1.3,  # remain default for json outputs, from experience.
